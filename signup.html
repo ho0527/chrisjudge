@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>chrisjudge</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="/website/plugin/css/chrisplugin.css">
+        <script src="/website/plugin/js/chrisplugin.js"></script>
+    </head>
+    <body>
+        <div class="navigationbar">
+            <div class="navigationbarleft titlediv" id="title">
+                <img src="material/icon/mainicon.png" class="logo">
+                <div class="maintitle">chrisjudge</div>
+            </div>
+        </div>
+
+        <div class="main center loginmain">
+            <div class="indextitle textcenter">使用者註冊</div>
+            <hr>
+            <div class="inputmargin">
+                <div class="sttextlabel">帳號</div>
+                <div class="stinput endicon underline">
+                    <input type="text" id="username">
+                    <div class="sticon"><img src="/website/material/icon/user.svg" class="iconinputicon" draggable="false"></div>
+                </div>
+            </div>
+            <div class="inputmargin">
+                <div class="sttextlabel">密碼</div>
+                <div class="stinput endicon underline">
+                    <input type="text" id="password">
+                    <div class="sticon"><img src="/website/material/icon/eyeclose.svg" class="iconinputicon cursor_pointer" id="passwordicon" draggable="false"></div>
+                </div>
+            </div>
+            <div class="inputmargin">
+                <div class="sttextlabel">暱稱</div>
+                <div class="stinput endicon underline">
+                    <input type="text" id="nickname">
+                    <div class="sticon"><img src="/website/material/icon/user.svg" class="iconinputicon" draggable="false"></div>
+                </div>
+            </div>
+            <div class="textcenter inputmargin">
+                <input type="button" class="stbutton secondary inputbutton" id="login" value="登入">
+                <input type="button" class="stbutton outline inputbutton" id="submit" value="註冊">
+            </div>
+        </div>
+
+        <div id="lightbox"></div>
+
+        <script src="signup.js"></script>
+        <script src="logincheck.js"></script>
+    </body>
+</html>

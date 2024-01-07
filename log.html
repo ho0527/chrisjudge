@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>chrisjudge</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="/website/plugin/css/chrisplugin.css">
+        <script src="/website/plugin/js/chrisplugin.js"></script>
+    </head>
+    <body>
+        <div class="navigationbar adminnavbar">
+            <div class="navigationbarleft titlediv" id="title">
+                <img src="material/icon/mainicon.png" class="logo">
+                <div class="maintitle">chrisjudge-ADMIN</div>
+            </div>
+            <div class="navigationbarright">
+                <input type="button" class="navigationbarbutton" id="newquestion" value="新增題目">
+                <input type="button" class="navigationbarbutton" id="userlist" value="使用者列表">
+                <input type="button" class="navigationbarbutton navigationbarselect" id="log" value="伺服器紀錄">
+                <input type="button" class="navigationbarbutton" id="score" value="分數列表">
+                <input type="button" class="navigationbarbutton" id="logout" value="logout">
+            </div>
+        </div>
+
+        <div class="main center adminmaindiv macossectiondivy">
+            <table class="sttable admintable" id="maintable">
+                <tr>
+                    <td class="td">no.</td>
+                    <td class="td">帳號id</td>
+                    <td class="td">動作</td>
+                    <td class="td">動作時間</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="lightbox"></div>
+
+        <script src="log.js"></script>
+        <script src="logout.js"></script>
+        <script src="logincheck.js"></script>
+    </body>
+</html>

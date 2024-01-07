@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>chrisjudge</title>
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="/website/plugin/css/chrisplugin.css">
+        <script src="/website/plugin/js/chrisplugin.js"></script>
+    </head>
+    <body>
+        <div class="navigationbar">
+            <div class="navigationbarleft">
+                <img src="material/icon/mainicon.png" class="logo" id="title">
+                <div class="maintitle">chrisjudge</div>
+            </div>
+            <div class="navigationbarright">
+                <input type="button" class="navigationbarbutton" id="profile" value="個人資料">
+                <input type="button" class="navigationbarbutton" id="score" value="分數列表">
+                <input type="button" class="navigationbarbutton" id="logout" value="logout">
+            </div>
+        </div>
+
+        <div class="main center">
+            <div class="question grid">
+                <div class="userquestioninput">
+                    題目: <input type="text" class="input userinput" id="questiontitle" disabled><br><br>
+                </div>
+                <textarea class="textarea userquestiontextarea usertextarea macossectiondivy" id="description" disabled></textarea>
+                <div class="questionfunction grid">
+                    <input type="button" class="stbutton outline questionfunctionbutton1" id="cancel" value="返回">
+                    <input type="button" class="stbutton outline questionfunctionbutton2" id="uploadfile" value="上傳檔案">
+                </div>
+                <div class="userquestionmaxruntimediv">
+                    最大執行時間: <input type="number" class="input shortinput userinput" id="maxruntime" min="1" max="100" step="0.5" value="10"><br><br>
+                </div>
+                <div class="inoutputtablediv macossectiondivy">
+                    <table class="sttable textcenter outborder" id="inoutputtable">
+                        <tr>
+                            <td class="questiontableno">no.</td>
+                            <td class="">輸入內容</td>
+                            <td class="">輸出內容</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="lightbox"></div>
+
+        <input type="file" class="file" id="file">
+
+        <script src="question.js"></script>
+        <script src="logout.js"></script>
+        <script src="logincheck.js"></script>
+    </body>
+</html>

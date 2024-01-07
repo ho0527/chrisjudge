@@ -1,0 +1,717 @@
+{
+    "data": [
+        {
+            "title": "chrisjudge",
+            "link": "../",
+            "statu": "SUCCESS",
+            "ps": "question",
+            "createdate": "2023/10/20",
+            "updatedate": "2023/11/05",
+            "data": [
+                {
+                    "list": 1,
+                    "description": "首頁",
+                    "statu": "SUCCESS",
+                    "data": [
+                        {
+                            "no": "01",
+                            "description": "使用者可以註冊",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "使用者可以輸入帳號、密碼、暱稱",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "密碼必須大於6個字元",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "02",
+                            "description": "使用者可以登入",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "使用帳號、密碼進行登入",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "list": 2,
+                    "description": "使用者頁面",
+                    "statu": "FAILED",
+                    "data": [
+                        {
+                            "no": "03",
+                            "description": "可以顯示所有題目的列表",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "包含: 題目id、作答情形、標題、敘述、查看按鈕、上傳檔案按鈕",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "04",
+                            "description": "可以查詢題目",
+                            "statu": "FAILED",
+                            "data": [
+                                {
+                                    "description": "使用名稱或tag",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "05",
+                            "description": "使用者再點選查看按鈕時可以連結到該題目的頁面",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "內容包含: 標題、最大執行時間、敘述、tag、測試資料(至多2個)、返回按鈕、上傳檔案按鈕",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "06",
+                            "description": "使用者可以上傳檔案並進行驗證",
+                            "statu": "FAILED",
+                            "data": []
+                        },
+                        {
+                            "no": "07",
+                            "description": "檔案結果分為以下三種情形SU(成功(SUCCESS))、OT(超過時間(OVERTIME))、RF(輸出失敗/程式錯誤(RUNFILED))，沒送出過則為空白",
+                            "statu": "FAILED",
+                            "data": []
+                        },
+                        {
+                            "no": "08",
+                            "description": "可以查看其他使用者的作答情形",
+                            "statu": "FAILED",
+                            "data": []
+                        },
+                        {
+                            "no": "09",
+                            "description": "可以修改自己的個人檔案",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "包含: 帳號、暱稱",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "可以修改密碼",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "list": 3,
+                    "description": "管理員頁面",
+                    "statu": "FAILED",
+                    "data": [
+                        {
+                            "no": "10",
+                            "description": "可以顯示所有題目的列表",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "包含: 題目id、發布者、標題、敘述、查看按鈕、刪除按鈕",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "11",
+                            "description": "可以查詢題目",
+                            "statu": "FAILED",
+                            "data": [
+                                {
+                                    "description": "使用名稱或tag",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "12",
+                            "description": "使用者再點選查看按鈕時可以連結到該題目的頁面",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "內容包含: 標題、最大執行時間、敘述、tag、測試資料(數個)、返回按鈕、修改按鈕",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "13",
+                            "description": "可以刪除題目",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "可以二步驟驗證",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "14",
+                            "description": "可以查看其他使用者的作答情形",
+                            "statu": "FAILED",
+                            "data": []
+                        },
+                        {
+                            "no": "15",
+                            "description": "可以查看其他使用者",
+                            "statu": "SUCCESS",
+                            "data": []
+                        },
+                        {
+                            "no": "16",
+                            "description": "可以查看伺服器log",
+                            "statu": "SUCCESS",
+                            "data": []
+                        },
+                        {
+                            "no": "17",
+                            "description": "可以修改自己的個人檔案",
+                            "statu": "FAILED",
+                            "data": [
+                                {
+                                    "description": "包含: 帳號、密碼、姓名",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "可以修改密碼",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "list": 4,
+                    "description": "網頁安全",
+                    "statu": "FAILED",
+                    "data": [
+                        {
+                            "no": "18",
+                            "description": "使用者不得在還未登入時進入網頁內、必須導向回index.html",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "並且在呼叫api時沒有token或token不正確的話會回傳403error",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "當權限不正確時必須導向回該權限頁面",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "19",
+                            "description": "密碼必須加密",
+                            "statu": "SUCCESS",
+                            "data": []
+                        },
+                        {
+                            "no": "20",
+                            "description": "SQL不能被簡單的注入",
+                            "statu": "SUCCESS",
+                            "data": []
+                        },
+                        {
+                            "no": "21",
+                            "description": "不能被XSS攻擊",
+                            "statu": "FAILED",
+                            "data": []
+                        }
+                    ]
+                },
+                {
+                    "list": 5,
+                    "description": "特殊功能",
+                    "statu": "FAILED",
+                    "data": [
+                        {
+                            "no": "27",
+                            "description": "註冊時可以使用email做驗證",
+                            "statu": "FAILED",
+                            "data": [
+                                {
+                                    "description": "並且可以重設密碼",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "28",
+                            "description": "在註冊後可以直接導向至user.html，不用再登入一次",
+                            "statu": "SUCCESS",
+                            "data": []
+                        },
+                        {
+                            "no": "29",
+                            "description": "使用者可以刪除帳號",
+                            "statu": "FAILED",
+                            "data": []
+                        },
+                        {
+                            "no": "30",
+                            "description": "可以使用第三方登入登入",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "google",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "github",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "FB",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "appleid",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "31",
+                            "description": "可以支持以下語言",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "php",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "python",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "javascript",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "C/C++/C#",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "32",
+                            "description": "可以刪除回應",
+                            "statu": "FAILED",
+                            "data": [
+                                {
+                                    "description": "特定題目",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "全部",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "list": 6,
+                    "description": "API list",
+                    "statu": "SUCCESS",
+                    "data": [
+                        {
+                            "no": "01",
+                            "description": "使用者登入 | method: POST, url: /backend/chrisjudge/login",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "resquest body: json{<br>&nbsp;&nbsp;&nbsp;&nbsp;username: <i>[username]</i>,<br>&nbsp;&nbsp;&nbsp;&nbsp;password: <i>[password]</i><br>}",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspid: <i>[userid]</i>,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsppermission: <i>[userpermission]</i><br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(fail username): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspmessage: 帳號錯誤,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspid: <i>[userid]</i><br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(fail password): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspmessage: 密碼錯誤,<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbspid: <i>[userid]</i><br>&nbsp;&nbsp;&nbsp;&nbsp;}<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "02",
+                            "description": "使用者第三方登入 | method: POST, url: /backend/chrisjudge/login/thirdpartylogin/google <b>不對外開放</b>",
+                            "statu": "SUCCESS",
+                            "data": []
+                        },
+                        {
+                            "no": "03",
+                            "description": "使用者註冊 | method: POST, url: /backend/chrisjudge/signup",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "resquest body: json{<br>&nbsp;&nbsp;&nbsp;&nbsp;username: <i>[username]</i>,<br>&nbsp;&nbsp;&nbsp;&nbsp;password: <i>[password]</i>,<br>&nbsp;&nbsp;&nbsp;&nbsp;name: <i>[name]</i>,<br>&nbsp;&nbsp;&nbsp;&nbsp;permission: <b>boolean</b><br>}",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"新增成功\"<br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(no username): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請輸入帳號\"<br>}, 400_BAD_REQUEST",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(password.length<6): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"密碼長度不得小於大於6\"<br>}, 400_BAD_REQUEST",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(no nickname): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請輸入暱稱\"<br>}, 400_BAD_REQUEST",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(username duplicate): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"使用者以存在\"<br>}, 400_BAD_REQUEST",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "04",
+                            "description": "使用者登出 | method: POST, url: /backend/chrisjudge/logout/<i>[token]</i>",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"\"<br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token doesn`t exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"token不存在\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "05",
+                            "description": "確認使用者是否有登入 | method: GET, url: /backend/chrisjudge/logincheck",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(is login): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: {<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;userid: <i>[userid]</i><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;permission: <i>[permission]</i><br>&nbsp;&nbsp;&nbsp;&nbsp}<br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(is not login): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"\"<br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "06",
+                            "description": "取得使用者 | method: GET, url: /backend/chrisjudge/getuser/<i>[token]</i>",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: <i>[user]</i><br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;data: \"使用者不存在請重新登入\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "07",
+                            "description": "使用者修改 | method: PUT, url: /backend/chrisjudge/edituser",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "resquest body: json{<br>&nbsp;&nbsp;&nbsp;&nbsp;username: <i>[username]</i>,<br>&nbsp;&nbsp;&nbsp;&nbsp;nickname: <i>[nickname]</i>,<br>}",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"修改成功\"<br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "08",
+                            "description": "使用者刪除 | method: DELETE, url: /backend/chrisjudge/deluser/",
+                            "statu": "FAILED",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"刪除成功\"<br>}, 200_OK",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "FAILED"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "FAILED"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "09",
+                            "description": "新增回應 | method: GET, url: /backend/chrisjudge/newresponse/<i>qusetionid</i>",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "resquest body: formdata{<br>&nbsp;&nbsp;&nbsp;&nbsp;file=<i>[file]</i><br>}",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: 'SU | RF | OT | MF'<br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(fileextension error): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"檔案不支援!\"<br>}, 400_BAD_REQUEST",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "10",
+                            "description": "取得特定使用者的回應 | method: GET, url: /backend/chrisjudge/getresponse",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: <i>[responserow]</i><br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "11",
+                            "description": "取得使用者的回應 | method: GET, url: /backend/chrisjudge/getresponselist",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: <i>[responserow]</i><br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        }
+
+
+
+
+
+
+
+                        ,
+                        {
+                            "no": "05",
+                            "description": "取得登出登入紀錄 | method: GET, url: /backend/chrisjudge/getlog",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: <i>[loglist]</i><br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "05",
+                            "description": "取得登出登入紀錄 | method: GET, url: /backend/chrisjudge/getlog",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: <i>[loglist]</i><br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "05",
+                            "description": "取得登出登入紀錄 | method: GET, url: /backend/chrisjudge/getlog",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: <i>[loglist]</i><br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "05",
+                            "description": "取得登出登入紀錄 | method: GET, url: /backend/chrisjudge/getlog",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: <i>[loglist]</i><br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(token not exist): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: \"請先登入!\"<br>}, 403_FORBIDDEN",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        },
+                        {
+                            "no": "05",
+                            "description": "取得登出登入紀錄 | method: GET, url: /backend/chrisjudge/getlog",
+                            "statu": "SUCCESS",
+                            "data": [
+                                {
+                                    "description": "request header: Authorization Bearer <i>[token]</i>",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(success): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: true,<br>&nbsp;&nbsp;&nbsp;&nbsp;data: <i>[loglist]</i><br>}, 200_OK",
+                                    "statu": "SUCCESS"
+                                },
+                                {
+                                    "description": "response body(sever fail): json{<br>&nbsp;&nbsp;&nbsp;&nbsp;success: false,&nbsp;&nbsp;&nbsp;&nbsp;<br>&nbsp;&nbsp;&nbsp;&nbsp;data: [ERROR] unknow error pls tell the admin error:\\n <i>[error]</i><br>}, 500_INTERNAL_SERVER_ERROR",
+                                    "statu": "SUCCESS"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
