@@ -1,64 +1,67 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>chrisjudge</title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="/website/plugin/css/chrisplugin.css">
-        <script src="/website/plugin/js/chrisplugin.js"></script>
-    </head>
-    <body>
-        <div class="navigationbar adminnavbar">
-            <div class="navigationbarleft titlediv" id="title">
-                <img src="material/icon/mainicon.png" class="logo">
-                <div class="maintitle">chrisjudge-ADMIN</div>
-            </div>
-            <div class="navigationbarright">
-                <input type="button" class="navigationbarbutton navigationbarselect" id="newquestion" value="新增題目">
-                <input type="button" class="navigationbarbutton" id="userlist" value="使用者列表">
-                <input type="button" class="navigationbarbutton" id="log" value="伺服器紀錄">
-                <input type="button" class="navigationbarbutton" id="score" value="分數列表">
-                <input type="button" class="navigationbarbutton" id="logout" value="logout">
-            </div>
-        </div>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>chrisjudge</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="https://ho0527.github.io/chrisplugin/css/chrisplugin.css">
+		<script src="https://ho0527.github.io/chrisplugin/js/chrisplugin.js"></script>
+	</head>
+	<body>
+		<div class="navigationbar adminnavbar">
+			<div class="navigationbarleft titlediv" id="title">
+				<img src="material/icon/mainicon.png" class="logo">
+				<div class="maintitle">chrisjudge-ADMIN</div>
+			</div>
+			<div class="navigationbarright">
+				<input type="button" class="navigationbarbutton navigationbarselect" id="newquestion" value="新增題目">
+				<input type="button" class="navigationbarbutton" id="userlist" value="使用者列表">
+				<input type="button" class="navigationbarbutton" id="log" value="伺服器紀錄">
+				<input type="button" class="navigationbarbutton" id="score" value="分數列表">
+				<input type="button" class="navigationbarbutton" id="logout" value="logout">
+			</div>
+		</div>
 
-        <div class="admintable"></div>
+		<div class="admintable"></div>
 
-        <div class="main center">
-            <div class="question grid">
-                <div class="questioninput">
-                    題目: <input type="text" class="input" id="questiontitle"><br><br>
-                </div>
-                <textarea class="textarea questiontextarea" id="description" placeholder="敘述"></textarea>
-                <div class="questionmaxruntimediv">
-                    最大執行時間: <input type="number" class="input shortinput" id="maxruntime" min="1" max="100" step="0.5" value="10"><br><br>
-                </div>
-                <div class="questionfunction grid">
-                    <input type="button" class="stbutton outline questionfunctionbutton1" id="cancel" value="取消">
-                    <input type="button" class="stbutton outline questionfunctionbutton2" id="submit" value="送出">
-                </div>
-                <div class="newinoutputdiv textcenter">
-                    <input type="button" class="stbutton outline" id="newinoutput" value="新增輸入輸出">
-                </div>
-                <div class="inoutputtablediv macossectiondivy">
-                    <table class="inoutput" id="inoutputtable">
-                        <tr>
-                            <td class="td">no.</td>
-                            <td class="td">輸入內容</td>
-                            <td class="td">輸出內容</td>
-                        </tr>
-                        <tr class="tr">
-                            <td class="td">1.</td>
-                            <td class="td"><textarea class="textarea questioninoutputtextarea questioninputtext" placeholder="輸入(禁止輸入'|&|'不會報錯!自己注意)"></textarea></td>
-                            <td class="td"><textarea class="textarea questioninoutputtextarea questionoutputtext" placeholder="輸出(禁止輸入'|&|'不會報錯!自己注意)"></textarea></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
+		<div class="main center">
+			<div class="question grid">
+				<div class="questioninput">
+					題目: <input type="text" class="input" id="questiontitle"><br><br>
+				</div>
+				<textarea class="textarea questiontextarea" id="description" placeholder="敘述"></textarea>
+				<div class="questionmaxruntimediv">
+					最大執行時間: <input type="number" class="input shortinput" id="maxruntime" min="1" max="100" step="0.5" value="10"><br><br>
+				</div>
+				<div class="questionfunction grid">
+					<input type="button" class="button outline questionfunctionbutton1" id="cancel" value="取消">
+					<input type="button" class="button outline questionfunctionbutton2" id="submit" value="送出">
+				</div>
+				<div class="newinoutputdiv textcenter">
+					<input type="button" class="button outline" id="newinoutput" value="新增輸入輸出">
+				</div>
+				<div class="inoutputtablediv macossectiondivy">
+					<table class="inoutput" id="inoutputtable">
+						<tr>
+							<td class="td">no.</td>
+							<td class="td">輸入內容</td>
+							<td class="td">輸出內容</td>
+						</tr>
+						<tr class="tr">
+							<td class="td">1.</td>
+							<td class="td"><textarea class="textarea questioninoutputtextarea questioninputtext" placeholder="輸入(禁止輸入'|&|'不會報錯!自己注意)"></textarea></td>
+							<td class="td"><textarea class="textarea questioninoutputtextarea questionoutputtext" placeholder="輸出(禁止輸入'|&|'不會報錯!自己注意)"></textarea></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
 
-        <script src="newquestion.js"></script>
-        <script src="logout.js"></script>
-        <script src="logincheck.js"></script>
-    </body>
+		<script src="initialize.js"></script>
+		<script src="newquestion.js"></script>
+		<script src="logout.js"></script>
+		<script src="logincheck.js"></script>
+	</body>
 </html>

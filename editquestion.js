@@ -8,7 +8,7 @@ docgetid("newquestion").onclick=function(){
     location.href="newquestion.html"
 }
 
-oldajax("GET","/backend/chrisjudge/getquestion/"+weblsget("chrispluginquestionid"),null,[
+oldajax("GET",AJAXURL+"getquestion/"+weblsget("chrispluginquestionid"),null,[
     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
@@ -80,7 +80,7 @@ docgetid("submit").onclick=function(){
     docgetall(".questionoutputtext").forEach(function(event){
         output.push(event.value)
     })
-    oldajax("PUT","/backend/chrisjudge/editquestion/"+weblsget("chrispluginquestionid"),JSON.stringify({
+    oldajax("PUT",AJAXURL+"editquestion/"+weblsget("chrispluginquestionid"),JSON.stringify({
         "title": docgetid("questiontitle").value,
         "description": docgetid("description").value,
         "tag": "技能競賽",

@@ -22,7 +22,7 @@ docgetid("score").onclick=function(){
     location.href="adminscore.html"
 }
 
-oldajax("GET","/backend/chrisjudge/getlog",null,[
+oldajax("GET",AJAXURL+"getlog",null,[
     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)

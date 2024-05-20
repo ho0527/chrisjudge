@@ -1,5 +1,28 @@
+function googlecallback(event){
+    let tokensplit=event.credential.split(".")
+    let tokenbase64=regexpreplace(regexpreplace(tokensplit[1],/-/g,"+"),/_/g,"/")
+    let token=JSON.parse(atob(tokenbase64))
+    oldajax("POST",AJAXURL+"login/thirdpartylogin/google",JSON.stringify(token),[
+        ["Content-Type","application/x-www-form-urlencoded"]
+    ]).onload=function(){
+        let data=JSON.parse(this.responseText)
+        if(data["success"]){
+            alert("登入成功")
+            localStorage.setItem("chrisjudgetoken",data["data"]["token"])
+            localStorage.setItem("chrisjudgepermission",data["data"]["permission"])
+            if(parseInt(weblsget("chrisjudgepermission"))>=4){
+                location.href="admin.html"
+            }else{
+                location.href="user.html"
+            }
+        }else{
+            alert(data["data"])
+        }
+    }
+}
+
 docgetid("submit").onclick=function(){
-    ajax("POST","/backend/chrisjudge/login",function(event,data){
+    ajax("POST",AJAXURL+"login",function(event,data){
         if(data["success"]){
             alert("登入成功")
             localStorage.setItem("chrisjudgetoken",data["data"]["token"])

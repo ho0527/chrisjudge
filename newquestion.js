@@ -55,7 +55,7 @@ docgetid("submit").onclick=function(){
     docgetall(".questionoutputtext").forEach(function(event){
         output.push(event.value)
     })
-    oldajax("POST","/backend/chrisjudge/newquestion",JSON.stringify({
+    oldajax("POST",AJAXURL+"newquestion",JSON.stringify({
         "title": docgetid("questiontitle").value,
         "description": docgetid("description").value,
         "tag": "技能競賽",

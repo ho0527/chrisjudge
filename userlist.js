@@ -18,7 +18,7 @@ docgetid("log").onclick=function(){
     location.href="log.html"
 }
 
-oldajax("GET","/backend/chrisjudge/getuserlist",null,[
+oldajax("GET",AJAXURL+"getuserlist",null,[
     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
@@ -36,16 +36,16 @@ oldajax("GET","/backend/chrisjudge/getuserlist",null,[
                     <td class="td">${row[i][1]}</td>
                     <td class="td">${row[i][3]}</td>
                     <td class="td">
-                        <input type="button" class="stbutton error userkickbutton" data-id="${row[i][0]}" value="剔除使用者"><br>
-                        <input type="button" class="stbutton error userbanbutton" data-id="${row[i][0]}" value="封禁使用者"><br>
-                        <input type="button" class="stbutton error userdelbutton" data-id="${row[i][0]}" value="刪除使用者"><br>
+                        <input type="button" class="button warn userkickbutton" data-id="${row[i][0]}" value="剔除使用者"><br>
+                        <input type="button" class="button warn userbanbutton" data-id="${row[i][0]}" value="封禁使用者"><br>
+                        <input type="button" class="button warn userdelbutton" data-id="${row[i][0]}" value="刪除使用者"><br>
                     </td>
                 </tr>
             `
             docgetall(".userkickbutton").forEach(function(event){
                 event.onclick=function(){
                     if(confirm("確認是否刪除?")){
-                        // oldajax("DELETE","/backend/chrisjudge/delquestion/"+event.dataset.id,null,[
+                        // oldajax("DELETE",AJAXURL+"delquestion/"+event.dataset.id,null,[
                         //     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
                         // ]).onload=function(){
                         //     let data=JSON.parse(this.responseText)
@@ -62,7 +62,7 @@ oldajax("GET","/backend/chrisjudge/getuserlist",null,[
             docgetall(".userbanbutton").forEach(function(event){
                 event.onclick=function(){
                     if(confirm("確認是否刪除?")){
-                        // oldajax("DELETE","/backend/chrisjudge/delquestion/"+event.dataset.id,null,[
+                        // oldajax("DELETE",AJAXURL+"delquestion/"+event.dataset.id,null,[
                         //     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
                         // ]).onload=function(){
                         //     let data=JSON.parse(this.responseText)
@@ -79,7 +79,7 @@ oldajax("GET","/backend/chrisjudge/getuserlist",null,[
             docgetall(".userdelbutton").forEach(function(event){
                 event.onclick=function(){
                     if(confirm("確認是否刪除?")){
-                        // oldajax("DELETE","/backend/chrisjudge/delquestion/"+event.dataset.id,null,[
+                        // oldajax("DELETE",AJAXURL+"delquestion/"+event.dataset.id,null,[
                         //     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
                         // ]).onload=function(){
                         //     let data=JSON.parse(this.responseText)

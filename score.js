@@ -20,7 +20,7 @@ docgetid("score").onclick=function(){
     location.reload()
 }
 
-ajax("GET","/backend/chrisjudge/getscorelist",function(event){
+ajax("GET",AJAXURL+"getscorelist",function(event){
     let data=JSON.parse(event.responseText)
     if(data["success"]){
         let scorelist=data["data"]

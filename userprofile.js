@@ -14,7 +14,7 @@ docgetid("score").onclick=function(){
     location.href="score.html"
 }
 
-oldajax("GET","/backend/chrisjudge/getuser/"+weblsget("chrisjudgetoken")).onload=function(){
+oldajax("GET",AJAXURL+"getuser/"+weblsget("chrisjudgetoken")).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){
         docgetid("username").value=data["data"][1]
@@ -33,7 +33,7 @@ docgetid("editpassword").onclick=function(){
 }
 
 docgetid("submit").onclick=function(){
-    oldajax("PUT","/backend/chrisjudge/edituser",JSON.stringify({
+    oldajax("PUT",AJAXURL+"edituser",JSON.stringify({
         "username": docgetid("username").value,
         "nickname": docgetid("nickname").value
     }),[

@@ -4,80 +4,57 @@
 ---
 ### 安裝及使用方式
 
-1. 先將此資料夾(前端)及後端程式下載(或colne)後解壓縮到某個地方並命名
-2. 前端部分
-    1. 請先將除了/backend及/sql以外的所有檔案拖曳至nginx的開啟目錄(或在任一子資料夾中)
-    2. 前端部分完成
+1. 先將此資料夾(前端)及後端程式下載後解壓縮到某個地方並命名
+2. 前端部分不須動作
 3. 後端部分(安裝虛擬環境及django)
-    1. 請將/backend複製到一個任一資料夾中(建議在C:/)
+    1. 在此資料夾外層需加一層資料夾
     2. 將此資料夾使用終端機(如cmd)開啟
     3. 安裝python
-    4. 下載虛擬環境
+    4. 執行server內的requirements.txt
+        ```cmd
+        pip install -r requirements.txt
+        ```
+    5. 下載虛擬環境
         ```cmd
         pip install virtualenv
         ```
-    5. 執行
+    6. 執行
         ```cmd
         virtualenv myenv
         ```
-    6. 再執行
+    7. 在執行
         ```cmd
         myenv\Scripts\activate
         ```
-    7. 之後您會看到cmd前墜加上了虛擬空間(myenv)
-    8. 執行/backend內的requirements.txt
+    8. 之後您會看到cmd前墜加上了虛擬空間(myenv)
+    9. 之後執行
         ```cmd
-        cd backend
-        pip install -r requirements.txt
-        ```
-    9.  之後執行
-        ```cmd
-        runserver.cmd
+        python manage.py runserver
         ```
         開啟server
     10. 您會在 http://localhost:8000 看到server
     11. 後端部分完成:)
 4.  資料庫部分
-    1. 在SQL/如果要有資料的話選chrisjudge.sql不要的話選chrisjudge_nodata.sql
-    2. 匯入mysql資料庫中資料庫請命名為"chrisjudge"(如果不想改後端的話)
-    3. 如果不想改後端的話帳密為root,無密碼
-    4. 資料庫部分完成
+    1. 在前端找到SQL/
+    2. 之後如果要以金有的餐可資料選chrisjudge.sql不要的話選chrisjudge_nodata.sql
+    3. 匯入mysql資料庫中資料庫請命名為"chrisjudge"如果不想改後端的話
+    4. 如果不想改後端的話 帳密為root,無密碼
+    5. 資料庫部分完成
 5.  server開啟
     1. 推用xampp的mysql+nginx開啟 此範例將以此介紹
-    2. 先將nginx/xampp mysql開啟
-    3. 之後再nginx中的sever>http區塊中輸入
-        ```conf
-        location /backend/{
-            proxy_pass http://127.0.0.1:8000/;
-            proxy_set_header Host $host;
-            proxy_set_header X-Real-IP $remote_addr;
-            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header X-Forwarded-Proto $scheme;
-        }
-        ```
-    4. 之後輸入localhost/您的資料夾網址即可開啟
-    5. 以上server開啟完成
-6. 第三方登入
-    1. 如果有需要請照以下執行(如果不需要請略過)
-        1. 暫不開放將在之後版本開放
-7. 附錄
-    1. 如果要改帳密/資料庫名請照此步驟
-        1. 請到/backend/function中您可以看到sql.py
-        2. 裡面的第12行有
-            ```py
-            db="chrisjudge"
-            ```
-            將此改成您的資料庫名
-        3. 裡面的第15行有
-            ```py
-            return MySQLdb.connect(host="localhost",db=db,user="root",passwd="")
-            ```
-            將請將您的帳密取代user及passwd變數
-        4. 以上
     2. nginx部分之介紹請參考(此檔案)[]
     3. 公開外網部分之介紹請參考(此檔案)[]
-8. 常見故障及解決方式
-9.  以上再次感謝您下載此軟體，在使用上出任何問題直接連絡我即可
+6. 第三方登入
+   1. 如果有需要請照以下執行
+   2. 如果不需要請照以下執行 刪除第三方登入程式碼
+7. 附錄
+   1. 如果要改帳密改動後端請照此步驟
+8. 以上再次感謝您下載此軟體，在使用上出任何問題直接連絡我即可
+
+---
+
+### 開發契機
+因為我不會用domjudge所以我決定製作一個自己的網站來驗證我可憐的演算法。
 
 ---
 
@@ -91,7 +68,7 @@
 ##### 參考: 無
 ##### 特別感謝: 無
 ##### 使用技術: html css js python mysql
-##### 目前版本: v1.0.0
+##### 目前版本: Bata1.0.0
 
 ---
 
@@ -99,11 +76,14 @@
 #### Bata1.0.0
 ##### 完成時間: 2023/11/05
 ##### 錯誤回報: 無
-##### 敘述:
-製作完成
+##### 敘述: 製作完成
 
 #### v1.0.0
-##### 完成時間: 2024/01/05
+##### 完成時間: 2023/12/13
 ##### 錯誤回報: 無
-##### 敘述:
-基本功能皆完成，之後將製作進階功能
+##### 敘述: 基本功能皆完成，之後將製作進階功能
+
+#### v2.0.0
+##### 完成時間: 2024/05/20
+##### 錯誤回報: 無
+##### 敘述: 版面大更新，加入更多功能，及優化原程式

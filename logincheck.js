@@ -1,4 +1,4 @@
-oldajax("GET","/backend/chrisjudge/logincheck",null,[
+oldajax("GET",AJAXURL+"logincheck",null,[
     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)

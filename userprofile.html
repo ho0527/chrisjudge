@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>chrisjudge</title>
-        <link rel="stylesheet" href="index.css">
-        <link rel="stylesheet" href="/website/plugin/css/chrisplugin.css">
-        <script src="/website/plugin/js/chrisplugin.js"></script>
-    </head>
-    <body>
-        <div class="navigationbar">
-            <div class="navigationbarleft titlediv" id="title">
-                <img src="material/icon/mainicon.png" class="logo">
-                <div class="maintitle">chrisjudge</div>
-            </div>
-            <div class="navigationbarright">
-                <input type="button" class="navigationbarbutton" id="user" value="首頁">
-                <input type="button" class="navigationbarbutton navigationbarselect" id="profile" value="個人資料">
-                <input type="button" class="navigationbarbutton" id="score" value="分數列表">
-                <input type="button" class="navigationbarbutton" id="logout" value="logout">
-            </div>
-        </div>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<title>chrisjudge</title>
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="index.css">
+		<link rel="stylesheet" href="https://ho0527.github.io/chrisplugin/css/chrisplugin.css">
+		<script src="https://ho0527.github.io/chrisplugin/js/chrisplugin.js"></script>
+	</head>
+	<body>
+		<div class="navigationbar">
+			<div class="navigationbarleft titlediv" id="title">
+				<img src="material/icon/mainicon.png" class="logo">
+				<div class="maintitle">chrisjudge</div>
+			</div>
+			<div class="navigationbarright">
+				<input type="button" class="navigationbarbutton" id="user" value="首頁">
+				<input type="button" class="navigationbarbutton navigationbarselect" id="profile" value="個人資料">
+				<input type="button" class="navigationbarbutton" id="score" value="分數列表">
+				<input type="button" class="navigationbarbutton" id="logout" value="logout">
+			</div>
+		</div>
 
-        <div class="main center loginmain">
-            帳號: <input type="text" class="input" id="username"><br><br>
-            暱稱: <input type="text" class="input" id="nickname"><br><br>
-            <input type="button" class="stbutton outline" id="goback" value="返回">
-            <input type="button" class="stbutton outline" id="submit" value="送出">
-            <input type="button" class="stbutton outline" id="editpassword" value="修改密碼">
-        </div>
+		<div class="main center loginmain">
+			<div class="inputdiv">
+				<div class="label">帳號</div>
+				<div class="input">
+					<input type="text" class="input" id="username">
+				</div>
+			</div>
+			<div class="inputdiv">
+				<div class="label">暱稱</div>
+				<div class="input">
+					<input type="text" class="input" id="nickname">
+				</div>
+			</div>
+			<div class="textcenter">
+				<input type="button" class="button outline" id="goback" value="返回">
+				<input type="button" class="button outline" id="submit" value="送出">
+				<input type="button" class="button outline" id="editpassword" value="修改密碼">
+			</div>
+		</div>
 
-        <script src="userprofile.js"></script>
-        <script src="logout.js"></script>
-        <script src="logincheck.js"></script>
-    </body>
+		<script src="initialize.js"></script>
+		<script src="userprofile.js"></script>
+		<script src="logout.js"></script>
+		<script src="logincheck.js"></script>
+	</body>
 </html>

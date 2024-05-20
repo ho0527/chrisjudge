@@ -16,16 +16,16 @@ docgetid("score").onclick=function(){
     location.href="score.html"
 }
 
-oldajax("GET","/backend/chrisjudge/getquestion/"+weblsget("chrispluginquestionid"),null,[
-    ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+oldajax("GET",AJAXURL+"getquestion/"+weblsget("chrispluginquestionid"),null,[
+    ["Authorization","Bearer "+weblsget("54national_chrisjudgetoken")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){
         let input
         let output
-        docgetid("questiontitle").value=data["data"][2]
+        docgetid("questiontitle").innerHTML=data["data"][2]
         docgetid("description").innerHTML=data["data"][3]
-        docgetid("maxruntime").value=data["data"][7]
+        docgetid("maxruntime").innerHTML=data["data"][7]+"s"
         input=data["data"][5].split("|&|")
         output=data["data"][6].split("|&|")
         for(let i=0;i<Math.min(2,input.length);i=i+1){
@@ -52,23 +52,24 @@ docgetid("cancel").onclick=function(){
 
 docgetid("uploadfile").onclick=function(){
     docgetid("file").click()
+
+    onchange("#file",function(elemnet,event){
+        removeclass("#process",["display-none"])
+        ajax("POST",AJAXURL+"newresponse/"+weblsget("chrispluginquestionid"),function(event,data){
+            if(data["success"]){
+                alert("結果: "+data["data"])
+                href("user.html")
+            }else{
+                alert(data["data"])
+            }
+        },formdata([
+            ["file",event.target.files[0]]
+        ]),[
+            ["Authorization","Bearer "+weblsget("54national_chrisjudgetoken")]
+        ])
+    })
 }
 
-docgetid("file").onchange=function(){
-    oldajax("POST","/backend/chrisjudge/newresponse/"+weblsget("chrispluginquestionid"),formdata([
-        ["file",this.files[0]]
-    ]),[
-        ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
-    ]).onload=function(){
-        let data=JSON.parse(this.responseText)
-        if(data["success"]){
-            alert("結果: "+data["data"])
-            location.reload()
-        }else{
-            alert(data["data"])
-        }
-    }
-}
 
 document.onkeydown=function(event){
     if(event.key=="Enter"){

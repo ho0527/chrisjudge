@@ -1,5 +1,5 @@
 docgetid("submit").onclick=function(){
-    oldajax("POST","/backend/chrisjudge/signup",JSON.stringify({
+    oldajax("POST",AJAXURL+"signup",JSON.stringify({
         "username": docgetid("username").value,
         "password": docgetid("password").value,
         "nickname": docgetid("nickname").value
