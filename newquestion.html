@@ -29,11 +29,23 @@
 		<div class="main center">
 			<div class="question grid">
 				<div class="questioninput">
-					題目: <input type="text" class="input" id="questiontitle"><br><br>
+					<div class="inputdiv">
+						<div class="label">題目</div>
+						<div class="input">
+							<input type="text" id="questiontitle">
+						</div>
+					</div>
 				</div>
-				<textarea class="textarea questiontextarea" id="description" placeholder="敘述"></textarea>
+				<div class="input questiontextarea">
+					<textarea class="textarea" id="description" placeholder="敘述"></textarea>
+				</div>
 				<div class="questionmaxruntimediv">
-					最大執行時間: <input type="number" class="input shortinput" id="maxruntime" min="1" max="100" step="0.5" value="10"><br><br>
+					<div class="inputdiv">
+						<div class="label">最大執行時間</div>
+						<div class="input">
+							<input type="number" id="maxruntime" min="1" max="100" step="0.5" value="10">
+						</div>
+					</div>
 				</div>
 				<div class="questionfunction grid">
 					<input type="button" class="button outline questionfunctionbutton1" id="cancel" value="取消">
@@ -51,8 +63,16 @@
 						</tr>
 						<tr class="tr">
 							<td class="td">1.</td>
-							<td class="td"><textarea class="textarea questioninoutputtextarea questioninputtext" placeholder="輸入(禁止輸入'|&|'不會報錯!自己注意)"></textarea></td>
-							<td class="td"><textarea class="textarea questioninoutputtextarea questionoutputtext" placeholder="輸出(禁止輸入'|&|'不會報錯!自己注意)"></textarea></td>
+							<td class="td">
+								<div class="input">
+									<textarea class="textarea questioninoutputtextarea questioninputtext" placeholder="輸入(禁止輸入'|&|'不會報錯!自己注意)"></textarea>
+								</div>
+							</td>
+							<td class="td">
+								<div class="input">
+									<textarea class="textarea questioninoutputtextarea questionoutputtext" placeholder="輸出(禁止輸入'|&|'不會報錯!自己注意)"></textarea>
+								</div>
+							</td>
 						</tr>
 					</table>
 				</div>

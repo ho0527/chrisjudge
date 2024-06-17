@@ -32,7 +32,6 @@ oldajax("GET",AJAXURL+"getquestionlist",null,[
             docgetid("maintable").innerHTML=`
                 ${docgetid("maintable").innerHTML}
                 <tr>
-                    <td>${row[i][0]}</td>
                     <td class="textleft">${row[i][2]}</td>
                     <td class="textleft">${description}</td>
                     <td>

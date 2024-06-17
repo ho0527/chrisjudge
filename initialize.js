@@ -1,3 +1,4 @@
-const AJAXURL="/backend/chrisjudge/"
+const WEBLSNAME="chrisjudge-"
+const AJAXURL="/backend/chrisjudge_54national/"
 
 startmacossection()
