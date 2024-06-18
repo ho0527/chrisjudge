@@ -14,7 +14,6 @@ function main(){
 
 					domgetid("maintable").innerHTML=`
 						<tr>
-							<th>no.</th>
 							<th>結果</th>
 							<th>題目</th>
 							<th>敘述</th>
@@ -50,7 +49,6 @@ function main(){
 						domgetid("maintable").innerHTML=`
 							${domgetid("maintable").innerHTML}
 							<tr>
-								<td>${row[i][0]}</td>
 								<td class="usertableresult" style="color: ${resultcolor}">${result}</td>
 								<td class="textleft">${row[i][2]}</td>
 								<td class="textleft">${description}</td>

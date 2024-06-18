@@ -46,7 +46,7 @@ ajax("GET",AJAXURL+"getscorelist",function(event){
             if(scorelist[i]["responselist"]){
                 let maintableuserscoreinnerhtml=`
                     <tr class="tr">
-                        <td class="td">${scorelist[i]["userid"]}</td>
+                        <td class="td">${scorelist[i]["nickname"]}</td>
                 `
 
                 for(let j=0;j<scorelist[i]["responselist"].length;j=j+1){
