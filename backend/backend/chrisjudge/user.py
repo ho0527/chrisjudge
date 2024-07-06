@@ -15,7 +15,7 @@ from rest_framework.response import Response
 
 # 自創
 from function.sql import query,createdb
-from function.thing import *
+from function.thing import printcolor,printcolorhaveline,time,switch_key,hashpassword,checkpassword,hash,uploadfile
 from .test import checkfile
 
 # main START
@@ -54,13 +54,13 @@ def getuser(request,token):
 @api_view(["PUT"])
 def edituser(request):
     try:
-        data=json.loads(request.body)
-        username=data.get("username")
-        nickname=data.get("nickname")
-
         token=request.headers.get("Authorization").split("Bearer ")[1]
         userrow=query(db,"SELECT*FROM `token` WHERE `token`=%s",[token])
         if userrow:
+            data=json.loads(request.body)
+            username=data.get("username")
+            nickname=data.get("nickname")
+
             query(db,"UPDATE `user` SET `username`=%s,`nickname`=%s,`updatetime`=%s WHERE `id`=%s",[username,nickname,time(),userrow[0][1]])
             query(db,"INSERT INTO `log`(`userid`,`move`,`movetime`)VALUES(%s,%s,%s)",[userrow[0][1],"修改使用者id: "+userrow[0][1],time()])
 
@@ -126,7 +126,7 @@ def newresponse(request,questionid):
                 response=checkfile(fileurl,questionrow[0])
 
                 query(
-                    db,
+                    "chrisjudge",
                     "INSERT INTO `response`(`userid`,`questionid`,`fileurl`,`fileextension`,`version`,`result`,`response`,`runtime`,`createtime`)VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s)",
                     [userid,questionid,fileurl,fileextension,len(responserow)+1,response["result"],response["response"],response["runtime"],time()]
                 )
@@ -185,7 +185,7 @@ def getresponselist(request):
         token=request.headers.get("Authorization").split("Bearer ")[1]
         userrow=query(db,"SELECT*FROM `token` WHERE `token`=%s",[token])
         if userrow:
-            row=query(db,"SELECT*FROM `response`")
+            row=query(db,"SELECT*FROM `response` WHERE `userid`=%s",[userrow[0][1]])
             return Response({
                 "success": True,
                 "data": row
@@ -227,12 +227,14 @@ def getscorelist(request):
                 if int(userrow[i][4])>=4:
                     data.append({
                         "userid": userrow[i][0],
+                        "nickname": userrow[i][3],
                         "responselist": None,
                         "reason": "user is admin"
                     })
                 else:
                     data.append({
                         "userid": userrow[i][0],
+                        "nickname": userrow[i][3],
                         "responselist": responselist
                     })
 

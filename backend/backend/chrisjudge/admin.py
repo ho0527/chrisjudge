@@ -15,7 +15,7 @@ from rest_framework.response import Response
 
 # 自創
 from function.sql import query,createdb
-from function.thing import *
+from function.thing import printcolor,printcolorhaveline,time,switch_key,hashpassword,checkpassword,hash,uploadfile
 
 # main START
 db="chrisjudge"

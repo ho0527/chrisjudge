@@ -16,7 +16,7 @@ from google.auth.transport import requests
 
 # 自創
 from function.sql import query,createdb
-from function.thing import *
+from function.thing import printcolor,printcolorhaveline,time,switch_key,hashpassword,checkpassword,hash
 
 # main START
 db="chrisjudge"
@@ -58,41 +58,40 @@ def login(request):
             "data": "[ERROR] unknow error pls tell the admin error:\n"+str(error)
         },status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-# 第三方登入
-# @api_view(["POST"])
-# def thirdpartylogin(request,type):
-#     try:
-#         if type=="google":
-#             data=json.loads(request.body)
-#             print(data)
-#             row=query("thirdpartylogin","SELECT*FROM `google` WHERE `email`=%s",[data["email"]])
-#             if not row:
-#                 query("thirdpartylogin","INSERT INTO `google`(`iss`,`azp`,`aud`,`sub`,`email`,`emailverified`,`nbf`,`name`,`picture`,`givenname`,`familyname`,`locale`,`iat`,`exp`,`jti`,`createtime`)VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",[data["iss"],data["azp"],data["aud"],data["sub"],data["email"],data["email_verified"],data["nbf"],data["name"],data["picture"],data["given_name"],data["family_name"],data["locale"],data["iat"],data["exp"],data["jti"],time()])
-#             row=query("chrisjudge","SELECT*FROM `user` WHERE `email`=%s",[data["email"]])
-#             if not row:
-#                 query("chrisjudge","INSERT INTO `user`(`username`,`password`,`nickname`,`permission`,`email`,`createtime`,`updatetime`)VALUES(%s,%s,%s,%s,%s,%s,%s)",["","","","1",data["email"],time(),time()])
-#             row=query(db,"SELECT*FROM `user` WHERE `email`=%s",[data["email"]])
-#             token=str(hash(data["email"],"sha256"))+str(str(random.randint(0,99999999)).zfill(8))
-#             query(db,"INSERT INTO `token`(`userid`,`token`,`createtime`)VALUES(%s,%s,%s)",[str(row[0][0]),token,time()]) # "google_"+ (1)
-#             query(db,"INSERT INTO `log`(`userid`,`move`,`movetime`)VALUES(%s,%s,%s)",[row[0][0],"使用者登入_google",time()])
-#             return Response({
-#                 "success": True,
-#                 "data": {
-#                     "token": token,
-#                     "permission": row[0][4]
-#                 }
-#             },status.HTTP_200_OK)
-#         else:
-#             return Response({
-#                 "success": False,
-#                 "data": "無此第三方登入資料"
-#             },status.HTTP_400_BAD_REQUEST)
-#     except Exception as error:
-#         printcolorhaveline("fail","[ERROR] "+str(error),"")
-#         return Response({
-#             "success": False,
-#             "data": "[ERROR] unknow error pls tell the admin error:\n"+str(error)
-#         },status.HTTP_500_INTERNAL_SERVER_ERROR)
+@api_view(["POST"])
+def thirdpartylogin(request,type):
+    try:
+        if type=="google":
+            data=json.loads(request.body)
+            print(data)
+            row=query("thirdpartylogin","SELECT*FROM `google` WHERE `email`=%s",[data["email"]])
+            if not row:
+                query("thirdpartylogin","INSERT INTO `google`(`iss`,`azp`,`aud`,`sub`,`email`,`emailverified`,`nbf`,`name`,`picture`,`givenname`,`familyname`,`locale`,`iat`,`exp`,`jti`,`createtime`)VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",[data["iss"],data["azp"],data["aud"],data["sub"],data["email"],data["email_verified"],data["nbf"],data["name"],data["picture"],data["given_name"],data["family_name"],data["locale"],data["iat"],data["exp"],data["jti"],time()])
+            row=query("chrisjudge","SELECT*FROM `user` WHERE `email`=%s",[data["email"]])
+            if not row:
+                query("chrisjudge","INSERT INTO `user`(`username`,`password`,`nickname`,`permission`,`email`,`createtime`,`updatetime`)VALUES(%s,%s,%s,%s,%s,%s,%s)",["","","","1",data["email"],time(),time()])
+            row=query(db,"SELECT*FROM `user` WHERE `email`=%s",[data["email"]])
+            token=str(hash(data["email"],"sha256"))+str(str(random.randint(0,99999999)).zfill(8))
+            query(db,"INSERT INTO `token`(`userid`,`token`,`createtime`)VALUES(%s,%s,%s)",[str(row[0][0]),token,time()]) # "google_"+ (1)
+            query(db,"INSERT INTO `log`(`userid`,`move`,`movetime`)VALUES(%s,%s,%s)",[row[0][0],"使用者登入_google",time()])
+            return Response({
+                "success": True,
+                "data": {
+                    "token": token,
+                    "permission": row[0][4]
+                }
+            },status.HTTP_200_OK)
+        else:
+            return Response({
+                "success": False,
+                "data": "無此第三方登入資料"
+            },status.HTTP_400_BAD_REQUEST)
+    except Exception as error:
+        printcolorhaveline("fail","[ERROR] "+str(error),"")
+        return Response({
+            "success": False,
+            "data": "[ERROR] unknow error pls tell the admin error:\n"+str(error)
+        },status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 @api_view(["POST"])
 def signup(request):
