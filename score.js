@@ -60,11 +60,11 @@ function main(){
             alert(userdata["data"])
         }
     },null,[
-        ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+        ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
     ])
 }
 
-if(!isset(weblsget("chrisjudgetoken"))){
+if(!isset(weblsget(WEBLSNAME+"token"))){
     location.href="/chrisjudge/"
 }
 

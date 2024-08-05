@@ -19,7 +19,7 @@ docgetid("log").onclick=function(){
 }
 
 oldajax("GET",AJAXURL+"getquestionlist",null,[
-    ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+    ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){
@@ -36,7 +36,7 @@ oldajax("GET",AJAXURL+"getquestionlist",null,[
                     <td class="textleft">${description}</td>
                     <td>
                         <input type="button" class="button outline questionbutton" data-id="${row[i][0]}" value="查看">
-                        <input type="button" class="button warn questiondelbutton" data-id="${row[i][0]}" value="刪除">
+                        <input type="button" class="button error questiondelbutton" data-id="${row[i][0]}" value="刪除">
                     </td>
                 </tr>
             `
@@ -50,7 +50,7 @@ oldajax("GET",AJAXURL+"getquestionlist",null,[
                 event.onclick=function(){
                     if(confirm("確認是否刪除?")){
                         oldajax("DELETE",AJAXURL+"delquestion/"+event.dataset.id,null,[
-                            ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+                            ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
                         ]).onload=function(){
                             let data=JSON.parse(this.responseText)
                             if(data["success"]){
@@ -69,5 +69,21 @@ oldajax("GET",AJAXURL+"getquestionlist",null,[
         alert(data["data"])
     }
 }
+
+onclick("#clearall",function(element,event){
+    if(confirm("確認是否清除所有資料?(此動作將不可撤銷)")){
+        ajax("POST",AJAXURL+"refdb",function(event,data){
+            if(data["success"]){
+                alert("清除成功")
+                weblsset(WEBLSNAME+"token",null)
+                href("index.html")
+            }else{
+                alert(data["data"])
+            }
+        },null,[
+            ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
+        ])
+    }
+})
 
 startmacossection()

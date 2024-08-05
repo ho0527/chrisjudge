@@ -1,6 +1,6 @@
 let questioncount=0
 
-if(!isset(weblsget("chrispluginquestionid"))){
+if(!isset(weblsget(WEBLSNAME+"questionid"))){
     location.href="index.html"
 }
 
@@ -8,8 +8,8 @@ docgetid("newquestion").onclick=function(){
     location.href="newquestion.html"
 }
 
-oldajax("GET",AJAXURL+"getquestion/"+weblsget("chrispluginquestionid"),null,[
-    ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+oldajax("GET",AJAXURL+"getquestion/"+weblsget(WEBLSNAME+"questionid"),null,[
+    ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){
@@ -80,7 +80,7 @@ docgetid("submit").onclick=function(){
     docgetall(".questionoutputtext").forEach(function(event){
         output.push(event.value)
     })
-    oldajax("PUT",AJAXURL+"editquestion/"+weblsget("chrispluginquestionid"),JSON.stringify({
+    oldajax("PUT",AJAXURL+"editquestion/"+weblsget(WEBLSNAME+"questionid"),JSON.stringify({
         "title": docgetid("questiontitle").value,
         "description": docgetid("description").value,
         "tag": "技能競賽",
@@ -89,7 +89,7 @@ docgetid("submit").onclick=function(){
         "maxruntime": docgetid("maxruntime").value
     }),[
         ["Content-Type","application/json"],
-        ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+        ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
     ]).onload=function(){
         let data=JSON.parse(this.responseText)
         if(data["success"]){

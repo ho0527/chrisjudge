@@ -14,7 +14,7 @@ docgetid("score").onclick=function(){
     location.href="score.html"
 }
 
-oldajax("GET",AJAXURL+"getuser/"+weblsget("chrisjudgetoken")).onload=function(){
+oldajax("GET",AJAXURL+"getuser/"+weblsget(WEBLSNAME+"token")).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){
         docgetid("username").value=data["data"][1]
@@ -38,7 +38,7 @@ docgetid("submit").onclick=function(){
         "nickname": docgetid("nickname").value
     }),[
         ["Content-Type","application/json"],
-        ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+        ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
     ]).onload=function(){
         let data=JSON.parse(this.responseText)
         if(data["success"]){

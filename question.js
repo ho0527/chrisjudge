@@ -1,6 +1,6 @@
 let questioncount=0
 
-if(!isset(weblsget("chrispluginquestionid"))){
+if(!isset(weblsget(WEBLSNAME+"questionid"))){
     location.href="index.html"
 }
 
@@ -16,8 +16,8 @@ docgetid("score").onclick=function(){
     location.href="score.html"
 }
 
-oldajax("GET",AJAXURL+"getquestion/"+weblsget("chrispluginquestionid"),null,[
-    ["Authorization","Bearer "+weblsget("54national_chrisjudgetoken")]
+oldajax("GET",AJAXURL+"getquestion/"+weblsget(WEBLSNAME+"questionid"),null,[
+    ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){
@@ -55,7 +55,7 @@ docgetid("uploadfile").onclick=function(){
 
     onchange("#file",function(elemnet,event){
         removeclass("#process",["display-none"])
-        ajax("POST",AJAXURL+"newresponse/"+weblsget("chrispluginquestionid"),function(event,data){
+        ajax("POST",AJAXURL+"newresponse/"+weblsget(WEBLSNAME+"questionid"),function(event,data){
             if(data["success"]){
                 alert("結果: "+data["data"])
                 href("user.html")
@@ -65,7 +65,7 @@ docgetid("uploadfile").onclick=function(){
         },formdata([
             ["file",event.target.files[0]]
         ]),[
-            ["Authorization","Bearer "+weblsget("54national_chrisjudgetoken")]
+            ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
         ])
     })
 }

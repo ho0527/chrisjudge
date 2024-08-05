@@ -1,10 +1,18 @@
+@import url("material/font/fa-brands-400.ttf");
+@import url("material/font/fa-brands-400.woff2");
+@import url("material/font/fa-regular-400.ttf");
+@import url("material/font/fa-regular-400.woff2");
+@import url("material/font/fa-solid-900.ttf");
+@import url("material/font/fa-solid-900.woff2");
+@import url("material/font/fa-v4compatibility.ttf");
+@import url("material/font/fa-v4compatibility.woff2");
 @import url("icon.css");
 @import url("flag.css");
 
 body{
+	width: 100dvw;
+	height: 100dvh;
 	font-family: "Consolas";
-	padding: 0px;
-	margin: 0px;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -36,7 +44,7 @@ table{
 }
 
 .maintitle{
-	color: white;
+	color: var(--stgray-900);
 	font-size: 40px;
 	font-weight: bold;
 	text-align: center;
@@ -238,7 +246,7 @@ table{
 
 .a{
 	text-decoration: none;
-	color: white;
+	color: var(--stgray-700);
 	font-weight: bold;
 	cursor: pointer;
 }
@@ -314,30 +322,20 @@ table{
 /* ================================================================================================================================================================== */
 
 html{
-	--staccent-color: #5c79ff;
-	--stwhite: #fff;
-	--stblack: #333;
+    --stwhite: #fff;
+    --stblack: #333;
 
-	/*--staccent-color: yellow;*/
-	--staccent-foreground-color: var(--stwhite);
+    --staccent-color: unset;
+    --staccent-foreground-color: var(--stwhite);
 
-	--stbreakpoint-mobile-min: 0px;
-	--stbreakpoint-mobile-max: 767.98px;
-	--stbreakpoint-tablet-min: 768px;
-	--stbreakpoint-tablet-max: 1023.98px;
-	--stbreakpoint-desktop-min: 1024px;
-	--stbreakpoint-desktop-max: 1279.98px;
-	--stbreakpoint-widescreen-min: 1280px;
-	--stbreakpoint-widescreen-max: 9999px;
-
-	--navbar-border-color-light: white;
-	--navbar-border-color-dark: rgb(49,53,53);
-	--navbar-color-light: black;
-	--navbar-color-dark: white;
-	--navbar-background-light: rgba(238,238,238,0.95);
-	--navbar-background-dark: rgba(50, 50, 50, 0.95);
-	--navbar-boxshadow-color-light: rgba(70,70,70,0.1);
-	--navbar-boxshadow-color-dark: rgba(70,70,70,0.1);
+    --stbreakpoint-mobile-min: 0px;
+    --stbreakpoint-mobile-max: 767.98px;
+    --stbreakpoint-tablet-min: 768px;
+    --stbreakpoint-tablet-max: 1023.98px;
+    --stbreakpoint-desktop-min: 1024px;
+    --stbreakpoint-desktop-max: 1279.98px;
+    --stbreakpoint-widescreen-min: 1280px;
+    --stbreakpoint-widescreen-max: 9999px;
 
 	--stlight-gray-50: rgb(255,255,255);
 	--stlight-gray-75: rgb(250,250,250);
@@ -365,213 +363,168 @@ html{
 	--stdark-gray-800: rgb(250,250,250);
 	--stdark-gray-900: rgb(255,255,255);
 
-	--ststatic-gray-50: var(--stlight-gray-50);
-	--ststatic-gray-75: var(--stlight-gray-75);
-	--ststatic-gray-100: var(--stlight-gray-100);
-	--ststatic-gray-200: var(--stlight-gray-200);
-	--ststatic-gray-300: var(--stlight-gray-300);
-	--ststatic-gray-400: var(--stlight-gray-400);
-	--ststatic-gray-500: var(--stlight-gray-500);
-	--ststatic-gray-600: var(--stlight-gray-600);
-	--ststatic-gray-700: var(--stlight-gray-700);
-	--ststatic-gray-800: var(--stlight-gray-800);
-	--ststatic-gray-900: var(--stlight-gray-900);
+    --ststatic-gray-50: var(--stlight-gray-50);
+    --ststatic-gray-75: var(--stlight-gray-75);
+    --ststatic-gray-100: var(--stlight-gray-100);
+    --ststatic-gray-200: var(--stlight-gray-200);
+    --ststatic-gray-300: var(--stlight-gray-300);
+    --ststatic-gray-400: var(--stlight-gray-400);
+    --ststatic-gray-500: var(--stlight-gray-500);
+    --ststatic-gray-600: var(--stlight-gray-600);
+    --ststatic-gray-700: var(--stlight-gray-700);
+    --ststatic-gray-800: var(--stlight-gray-800);
+    --ststatic-gray-900: var(--stlight-gray-900);
 
-	--ststatic-primary-400: #40a9ff;
-	--ststatic-primary-500: #1890ff;
-	--ststatic-primary-600: #096dd9;
-	--ststatic-primary-700: #0050b3;
-	--ststatic-primary-800: #003a8c;
-	--ststatic-primary-900: #002766;
+    --ststatic-primary-400: #40a9ff;
+    --ststatic-primary-500: #1890ff;
+    --ststatic-primary-600: #096dd9;
+    --ststatic-primary-700: #0050b3;
+    --ststatic-primary-800: #003a8c;
+    --ststatic-primary-900: #002766;
 
-	--ststatic-warning-400: #ffec3d;
-	--ststatic-warning-500: #fadb14;
-	--ststatic-warning-600: #d4b106;
-	--ststatic-warning-700: #ad8b00;
-	--ststatic-warning-800: #876800;
-	--ststatic-warning-900: #614700;
+    --ststatic-warn-400: #ffec3d;
+    --ststatic-warn-500: #fadb14;
+    --ststatic-warn-600: #d4b106;
+    --ststatic-warn-700: #ad8b00;
+    --ststatic-warn-800: #876800;
+    --ststatic-warn-900: #614700;
 
-	--ststatic-positive-400: #73d13d;
-	--ststatic-positive-500: #52c41a;
-	--ststatic-positive-600: #389e0d;
-	--ststatic-positive-700: #237804;
-	--ststatic-positive-800: #135200;
-	--ststatic-positive-900: #092b00;
+    --ststatic-success-400: #73d13d;
+    --ststatic-success-500: #52c41a;
+    --ststatic-success-600: #389e0d;
+    --ststatic-success-700: #237804;
+    --ststatic-success-800: #135200;
+    --ststatic-success-900: #092b00;
 
-	--ststatic-negative-400: #ff4d4f;
-	--ststatic-negative-500: #f5222d;
-	--ststatic-negative-600: #cf1322;
-	--ststatic-negative-700: #a8071a;
-	--ststatic-negative-800: #820014;
-	--ststatic-negative-900: #5c0011;
+    --ststatic-error-400: #ff4d4f;
+    --ststatic-error-500: #f5222d;
+    --ststatic-error-600: #cf1322;
+    --ststatic-error-700: #a8071a;
+    --ststatic-error-800: #820014;
+    --ststatic-error-900: #5c0011;
 
-	--stprimary-400: #40a9ff;
-	--stprimary-500: #1890ff;
-	--stprimary-600: #096dd9;
-	--stprimary-700: #0050b3;
-	--stprimary-800: #003a8c;
-	--stprimary-900: #002766;
+    --stprimary-400: #40a9ff;
+    --stprimary-500: #1890ff;
+    --stprimary-600: #096dd9;
+    --stprimary-700: #0050b3;
+    --stprimary-800: #003a8c;
+    --stprimary-900: #002766;
 
-	--stlink-700: #0050b3;
+    --stlink-700: #0050b3;
 
-	--stwarning-400: #ffec3d;
-	--stwarning-500: #fadb14;
-	--stwarning-600: #d4b106;
-	--stwarning-700: #ad8b00;
-	--stwarning-800: #876800;
-	--stwarning-900: #614700;
+    --stwarn-400: #ffec3d;
+    --stwarn-500: #fadb14;
+    --stwarn-600: #d4b106;
+    --stwarn-700: #ad8b00;
+    --stwarn-800: #876800;
+    --stwarn-900: #614700;
 
-	--stpositive-400: #73d13d;
-	--stpositive-500: #52c41a;
-	--stpositive-600: #389e0d;
-	--stpositive-700: #237804;
-	--stpositive-800: #135200;
-	--stpositive-900: #092b00;
+    --stsuccess-400: #73d13d;
+    --stsuccess-500: #52c41a;
+    --stsuccess-600: #389e0d;
+    --stsuccess-700: #237804;
+    --stsuccess-800: #135200;
+    --stsuccess-900: #092b00;
 
-	--stnegative-400: #ff4d4f;
-	--stnegative-500: #f5222d;
-	--stnegative-600: #cf1322;
-	--stnegative-700: #a8071a;
-	--stnegative-800: #820014;
-	--stnegative-900: #5c0011;
+    --sterror-400: #ff4d4f;
+    --sterror-500: #f5222d;
+    --sterror-600: #cf1322;
+    --sterror-700: #a8071a;
+    --sterror-800: #820014;
+    --sterror-900: #5c0011;
 
-	/* Sizes */
+    --stz-drawer: 102;
+    --stz-dropdown: 103;
+    --stz-mask: 101;
+    --stz-modal: 102;
+    --stz-tooltip: 104;
 
-	--stinput-height-large: 42px;
-	--stinput-height-large-dense: 37px;
-	--stinput-height-medium: 37px;
-	--stinput-height-medium-dense: 32px;
-	--stinput-height-small: 32px;
-	--stinput-height-small-dense: 32px;
+    --stborder-radius-container: 0.4rem;
+    --stborder-radius-element: 0.4rem;
+    --stborder-radius-secondary: 0.3rem;
 
-	--stfont-size-mini: calc(12 / 15 * 1rem);
-	--stfont-size-tiny: calc(13 / 15 * 1rem);
-	--stfont-size-small: calc(14 / 15 * 1rem);
-	--stfont-size-medium: calc(15 / 15 * 1rem);
-	--stfont-size-large: calc(18 / 15 * 1rem);
-	--stfont-size-big: calc(20 / 15 * 1rem);
-	--stfont-size-huge: calc(24 / 15 * 1rem);
-	--stfont-size-massive: calc(30 / 15 * 1rem);
+    --stpage-background-default: var(--stgray-50);
+    --stpage-background-secondary: var(--stgray-75);
+    --stpage-background-tertiary: var(--stgray-100);
 
-	--stfont-size-01px: calc(1 / 15 * 1rem);
-	--stfont-size-02px: calc(2 / 15 * 1rem);
-	--stfont-size-03px: calc(3 / 15 * 1rem);
-	--stfont-size-04px: calc(4 / 15 * 1rem);
-	--stfont-size-05px: calc(5 / 15 * 1rem);
-	--stfont-size-06px: calc(6 / 15 * 1rem);
-	--stfont-size-07px: calc(7 / 15 * 1rem);
-	--stfont-size-08px: calc(8 / 15 * 1rem);
-	--stfont-size-09px: calc(9 / 15 * 1rem);
-	--stfont-size-10px: calc(10 / 15 * 1rem);
-	--stfont-size-11px: calc(11 / 15 * 1rem);
-	--stfont-size-12px: calc(12 / 15 * 1rem);
-	--stfont-size-13px: calc(13 / 15 * 1rem);
-	--stfont-size-14px: calc(14 / 15 * 1rem);
-	--stfont-size-15px: calc(15 / 15 * 1rem);
-	--stfont-size-16px: calc(16 / 15 * 1rem);
-	--stfont-size-17px: calc(17 / 15 * 1rem);
-	--stfont-size-18px: calc(18 / 15 * 1rem);
-	--stfont-size-19px: calc(19 / 15 * 1rem);
-	--stfont-size-20px: calc(20 / 15 * 1rem);
-	--stfont-size-21px: calc(21 / 15 * 1rem);
-	--stfont-size-22px: calc(22 / 15 * 1rem);
-	--stfont-size-23px: calc(23 / 15 * 1rem);
-	--stfont-size-24px: calc(24 / 15 * 1rem);
-	--stfont-size-25px: calc(25 / 15 * 1rem);
-	--stfont-size-26px: calc(26 / 15 * 1rem);
-	--stfont-size-27px: calc(27 / 15 * 1rem);
-	--stfont-size-28px: calc(28 / 15 * 1rem);
-	--stfont-size-29px: calc(29 / 15 * 1rem);
-	--stfont-size-30px: calc(30 / 15 * 1rem);
-	--stfont-size-31px: calc(31 / 15 * 1rem);
-	--stfont-size-32px: calc(32 / 15 * 1rem);
-	--stfont-size-33px: calc(33 / 15 * 1rem);
-	--stfont-size-34px: calc(34 / 15 * 1rem);
-	--stfont-size-35px: calc(35 / 15 * 1rem);
-	--stfont-size-36px: calc(36 / 15 * 1rem);
-	--stfont-size-37px: calc(37 / 15 * 1rem);
-	--stfont-size-38px: calc(38 / 15 * 1rem);
-	--stfont-size-39px: calc(39 / 15 * 1rem);
-	--stfont-size-40px: calc(40 / 15 * 1rem);
-	--stfont-size-41px: calc(41 / 15 * 1rem);
-	--stfont-size-42px: calc(42 / 15 * 1rem);
-	--stfont-size-43px: calc(43 / 15 * 1rem);
-	--stfont-size-44px: calc(44 / 15 * 1rem);
-	--stfont-size-45px: calc(45 / 15 * 1rem);
-	--stfont-size-46px: calc(46 / 15 * 1rem);
-	--stfont-size-47px: calc(47 / 15 * 1rem);
-	--stfont-size-48px: calc(48 / 15 * 1rem);
-	--stfont-size-49px: calc(49 / 15 * 1rem);
-	--stfont-size-50px: calc(50 / 15 * 1rem);
-	--stfont-size-51px: calc(51 / 15 * 1rem);
-	--stfont-size-52px: calc(52 / 15 * 1rem);
-	--stfont-size-53px: calc(53 / 15 * 1rem);
-	--stfont-size-54px: calc(54 / 15 * 1rem);
-	--stfont-size-55px: calc(55 / 15 * 1rem);
-	--stfont-size-56px: calc(56 / 15 * 1rem);
-	--stfont-size-57px: calc(57 / 15 * 1rem);
-	--stfont-size-58px: calc(58 / 15 * 1rem);
-	--stfont-size-59px: calc(59 / 15 * 1rem);
-	--stfont-size-60px: calc(60 / 15 * 1rem);
-	--stfont-size-61px: calc(61 / 15 * 1rem);
-	--stfont-size-62px: calc(62 / 15 * 1rem);
-	--stfont-size-63px: calc(63 / 15 * 1rem);
-	--stfont-size-64px: calc(64 / 15 * 1rem);
-	--stfont-size-65px: calc(65 / 15 * 1rem);
-	--stfont-size-66px: calc(66 / 15 * 1rem);
-	--stfont-size-67px: calc(67 / 15 * 1rem);
-	--stfont-size-68px: calc(68 / 15 * 1rem);
-	--stfont-size-69px: calc(69 / 15 * 1rem);
-	--stfont-size-70px: calc(70 / 15 * 1rem);
-	--stfont-size-71px: calc(71 / 15 * 1rem);
-	--stfont-size-72px: calc(72 / 15 * 1rem);
-	--stfont-size-73px: calc(73 / 15 * 1rem);
-	--stfont-size-74px: calc(74 / 15 * 1rem);
-	--stfont-size-75px: calc(75 / 15 * 1rem);
-	--stfont-size-76px: calc(76 / 15 * 1rem);
-	--stfont-size-77px: calc(77 / 15 * 1rem);
-	--stfont-size-78px: calc(78 / 15 * 1rem);
-	--stfont-size-79px: calc(79 / 15 * 1rem);
-	--stfont-size-80px: calc(80 / 15 * 1rem);
-	--stfont-size-81px: calc(81 / 15 * 1rem);
-	--stfont-size-82px: calc(82 / 15 * 1rem);
-	--stfont-size-83px: calc(83 / 15 * 1rem);
-	--stfont-size-84px: calc(84 / 15 * 1rem);
-	--stfont-size-85px: calc(85 / 15 * 1rem);
-	--stfont-size-86px: calc(86 / 15 * 1rem);
-	--stfont-size-87px: calc(87 / 15 * 1rem);
-	--stfont-size-88px: calc(88 / 15 * 1rem);
-	--stfont-size-89px: calc(89 / 15 * 1rem);
-	--stfont-size-90px: calc(90 / 15 * 1rem);
+    --stelevated-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.1);
+    --stelevated-shadow-modal: 0 0 20px rgba(0, 0, 0, 0.1);
+    --stelevated-shadow-drawer: 0 0 20px rgba(0, 0, 0, 0.1);
 
-	--stabsolute-mini: calc(12 / 15 * 1rem);
-	--stabsolute-tiny: calc(13 / 15 * 1rem);
-	--stabsolute-small: calc(14 / 15 * 1rem);
-	--stabsolute-medium: calc(15 / 15 * 1rem);
-	--stabsolute-large: calc(18 / 15 * 1rem);
-	--stabsolute-big: calc(20 / 15 * 1rem);
-	--stabsolute-huge: calc(24 / 15 * 1rem);
-	--stabsolute-massive: calc(30 / 15 * 1rem);
+	--staccent-color: #5c79ff;
 
-	--strelative-mini: calc(12 / 15 * 1em);
-	--strelative-tiny: calc(13 / 15 * 1em);
-	--strelative-small: calc(14 / 15 * 1em);
-	--strelative-medium: calc(15 / 15 * 1em);
-	--strelative-large: calc(18 / 15 * 1em);
-	--strelative-big: calc(20 / 15 * 1em);
-	--strelative-huge: calc(24 / 15 * 1em);
-	--strelative-massive: calc(30 / 15 * 1em);
-
-	--stspace-gap: 1rem;
-	--stspace-gap-small: 0.5rem;
-	--stspace-gap-large: 1.5rem;
-	--stspace-gap-big: 3rem;
-	--stspace-gap-huge: 4.5rem;
+	--navbar-border-color-light: white;
+	--navbar-border-color-dark: rgb(49,53,53);
+	--navbar-color-light: black;
+	--navbar-color-dark: white;
+	--navbar-background-light: rgba(238,238,238,0.95);
+	--navbar-background-dark: rgba(50, 50, 50, 0.95);
+	--navbar-boxshadow-color-light: rgba(70,70,70,0.1);
+	--navbar-boxshadow-color-dark: rgba(70,70,70,0.1);
 
 	--rangeslider-color-light: rgb(51,51,51);
 	--rangeslider-border-color-light: black;
 	--rangeslider-color-dark: rgb(235,235,235);
 	--rangeslider-border-color-dark: white;
+
+    --stinput-height-large: 42px;
+    --stinput-height-large-dense: 37px;
+    --stinput-height-medium: 37px;
+    --stinput-height-medium-dense: 32px;
+    --stinput-height-small: 32px;
+    --stinput-height-small-dense: 32px;
+
+    --stfont-size-mini: calc(12 / 15 * 1rem);
+    --stfont-size-tiny: calc(13 / 15 * 1rem);
+    --stfont-size-small: calc(14 / 15 * 1rem);
+    --stfont-size-medium: calc(15 / 15 * 1rem);
+    --stfont-size-large: calc(18 / 15 * 1rem);
+    --stfont-size-big: calc(20 / 15 * 1rem);
+    --stfont-size-huge: calc(24 / 15 * 1rem);
+    --stfont-size-massive: calc(30 / 15 * 1rem);
+
+    --stfont-size-12px: calc(12 / 15 * 1rem);
+    --stfont-size-13px: calc(13 / 15 * 1rem);
+    --stfont-size-14px: calc(14 / 15 * 1rem);
+    --stfont-size-15px: calc(15 / 15 * 1rem);
+    --stfont-size-16px: calc(16 / 15 * 1rem);
+    --stfont-size-17px: calc(17 / 15 * 1rem);
+    --stfont-size-18px: calc(18 / 15 * 1rem);
+    --stfont-size-20px: calc(20 / 15 * 1rem);
+    --stfont-size-24px: calc(24 / 15 * 1rem);
+    --stfont-size-25px: calc(25 / 15 * 1rem);
+    --stfont-size-30px: calc(30 / 15 * 1rem);
+    --stfont-size-33px: calc(33 / 15 * 1rem);
+    --stfont-size-35px: calc(35 / 15 * 1rem);
+    --stfont-size-38px: calc(38 / 15 * 1rem);
+    --stfont-size-45px: calc(45 / 15 * 1rem);
+    --stfont-size-55px: calc(55 / 15 * 1rem);
+    --stfont-size-65px: calc(65 / 15 * 1rem);
+    --stfont-size-75px: calc(75 / 15 * 1rem);
+
+    --stabsolute-mini: calc(12 / 15 * 1rem);
+    --stabsolute-tiny: calc(13 / 15 * 1rem);
+    --stabsolute-small: calc(14 / 15 * 1rem);
+    --stabsolute-medium: calc(15 / 15 * 1rem);
+    --stabsolute-large: calc(18 / 15 * 1rem);
+    --stabsolute-big: calc(20 / 15 * 1rem);
+    --stabsolute-huge: calc(24 / 15 * 1rem);
+    --stabsolute-massive: calc(30 / 15 * 1rem);
+
+    --strelative-mini: calc(12 / 15 * 1em);
+    --strelative-tiny: calc(13 / 15 * 1em);
+    --strelative-small: calc(14 / 15 * 1em);
+    --strelative-medium: calc(15 / 15 * 1em);
+    --strelative-large: calc(18 / 15 * 1em);
+    --strelative-big: calc(20 / 15 * 1em);
+    --strelative-huge: calc(24 / 15 * 1em);
+    --strelative-massive: calc(30 / 15 * 1em);
+
+    --stspace-gap: 1rem;
+    --stspace-gap-small: 0.5rem;
+    --stspace-gap-large: 1.5rem;
+    --stspace-gap-big: 3rem;
+    --stspace-gap-huge: 4.5rem;
 }
 
 /* ========================================================================== Color Schemes ========================================================================== */
@@ -970,9 +923,8 @@ Body
 4. 改為透明來移除 Webkit 瀏覽器上的點擊高光。
 */
 body{
-	width: 100%;
-	height: 100%;
-	margin: 0;
+	padding: 0px;
+	margin: 0px;
 	overflow-x: hidden;
 	-webkit-text-size-adjust: 100%;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
@@ -1166,15 +1118,15 @@ button{
 		border-color: var(--stgray-300);
 	}
 
-	&.warn{
+	&.error{
 		color: var(--stwhite);
-		border-color: var(--stnegative-500);
-		background: var(--stnegative-500);
+		border-color: var(--sterror-500);
+		background: var(--sterror-500);
 
 		&:hover{
 			color: var(--stwhite);
-			border-color: var(--stnegative-500);
-			background: var(--stnegative-500);
+			border-color: var(--sterror-500);
+			background: var(--sterror-500);
 		}
 	}
 
@@ -1188,8 +1140,8 @@ button{
 			color: var(--stgray-600);
 		}
 
-		&.warn{
-			color: var(--stnegative-500);
+		&.error{
+			color: var(--sterror-500);
 		}
 	}
 
@@ -1328,7 +1280,7 @@ button{
 
 
 	&.error:is(.start-labeled-icon,.end-labeled-icon) .icon{
-		background: var(--stnegative-400);
+		background: var(--sterror-400);
 	}
 
 	&.outline:is(.start-labeled-icon,.end-labeled-icon) .icon{
@@ -1382,7 +1334,7 @@ button{
 		}
 
 		&.warn{
-			color: var(--stnegative-500);
+			color: var(--sterror-500);
 		}
 	}
 
@@ -1687,7 +1639,7 @@ button{
 	}
 
 	&.warn{
-		color: var(--stnegative-500);
+		color: var(--sterror-500);
 	}
 }
 
@@ -1761,7 +1713,7 @@ button{
 		}
 
 		&.error::before{
-			background: var(--stnegative-400);
+			background: var(--sterror-400);
 		}
 
 		&.secondary::before{
@@ -1842,13 +1794,13 @@ button{
 /* error */
 .stbutton.error{
 	color: var(--stwhite);
-	border-color: var(--stnegative-500);
-	background: var(--stnegative-500);
+	border-color: var(--sterror-500);
+	background: var(--sterror-500);
 }
 
 .stbutton.error:hover{
-	border: 2px var(--stnegative-700) solid;
-	background: var(--stnegative-700);
+	border: 2px var(--sterror-700) solid;
+	background: var(--sterror-700);
 	font-weight: bold;
 }
 
@@ -1870,7 +1822,7 @@ button{
 }
 
 .stbutton.ghost.warn{
-	color: var(--stnegative-500);
+	color: var(--sterror-500);
 }
 
 /* Loading */
@@ -2019,7 +1971,7 @@ button{
 }
 
 .stbutton.error:is(.is-start-labeled-icon,.is-end-labeled-icon) .icon{
-	background: var(--stnegative-400);
+	background: var(--sterror-400);
 }
 
 .stbutton.outline:is(.is-start-labeled-icon,.is-end-labeled-icon) .icon{
@@ -2110,7 +2062,7 @@ button{
 }
 
 .stbuttons .stbutton.error::before{
-	background: var(--stnegative-400);
+	background: var(--sterror-400);
 }
 
 .stbuttons .stbutton.secondary::before{
@@ -2217,7 +2169,7 @@ button{
 	/* error */
 
 	&.error{
-		color: var(--stnegative-500);
+		color: var(--sterror-500);
 	}
 
 	/* Disabled */
@@ -2291,12 +2243,13 @@ button{
 
 /* ========================================================================== Base ========================================================================== */
 .divider{
-	border-top: 1px solid var(--stgray-300);
+	border-top: 2px solid var(--stgray-300);
+	margin: 10px 0px;
 	/* ========================================================================== Variations ========================================================================== */
 
 	/* Vertical */
 	&.vertical{
-		border-top: 0;
+		border-top: 0px;
 		border-left: 1px solid var(--stgray-300);
 	}
 
@@ -2783,85 +2736,85 @@ button{
 
 	/* error */
 	&.inputerror input{
-		color: var(--stnegative-600);
-		border-color: var(--stnegative-400);
+		color: var(--sterror-600);
+		border-color: var(--sterror-400);
 		font-weight: 500;
 	}
 
 	&.inputerror textarea{
-		color: var(--stnegative-600);
-		border-color: var(--stnegative-400);
+		color: var(--sterror-600);
+		border-color: var(--sterror-400);
 		font-weight: 500;
 	}
 
 	&.inputerror .label{
-		border-color: var(--stnegative-400);
+		border-color: var(--sterror-400);
 	}
 
 	/* Solid */
 	&.inputerror.solid:is(.startlabel,.label,.endlabel) .label{
-		border-color: var(--stnegative-400);
+		border-color: var(--sterror-400);
 	}
 
 	&.inputerror.solid input:focus,&.inputerror.solid textarea:focus{
 		background: var(--stgray-100);
-		border: 1px solid var(--stnegative-400);
+		border: 1px solid var(--sterror-400);
 	}
 
 	/* Underlined */
 	&.inputerror.underline .label{
 		border-color: transparent;
-		border-bottom-color: var(--stnegative-400);
+		border-bottom-color: var(--sterror-400);
 	}
 	&.inputerror.underline input{
 		border-color: transparent;
-		border-bottom-color: var(--stnegative-400);
+		border-bottom-color: var(--sterror-400);
 	}
 	&.inputerror.underline textarea{
 		border-color: transparent;
-		border-bottom-color: var(--stnegative-400);
+		border-bottom-color: var(--sterror-400);
 	}
 
 	/* error */
 
 	&.error input{
-		color: var(--stnegative-600);
-		border-color: var(--stnegative-400);
+		color: var(--sterror-600);
+		border-color: var(--sterror-400);
 		font-weight: 500;
 	}
 
 	&.error textarea{
-		color: var(--stnegative-600);
-		border-color: var(--stnegative-400);
+		color: var(--sterror-600);
+		border-color: var(--sterror-400);
 		font-weight: 500;
 	}
 
 	&.error .label{
-		border-color: var(--stnegative-400);
+		border-color: var(--sterror-400);
 	}
 
 	/* Solid */
 	&.error.is-solid:is(.is-start-labeled,.islabel,.is-end-labeled) .label{
-		border-color: var(--stnegative-400);
+		border-color: var(--sterror-400);
 	}
 
 	&.error.is-solid input:focus,&.error.is-solid textarea:focus{
 		background: var(--stgray-100);
-		border: 1px solid var(--stnegative-400);
+		border: 1px solid var(--sterror-400);
 	}
 
 	/* Underlined */
 	&.error.underline .label{
 		border-color: transparent;
-		border-bottom-color: var(--stnegative-400);
+		border-bottom-color: var(--sterror-400);
 	}
 	&.error.underline input{
 		border-color: transparent;
-		border-bottom-color: var(--stnegative-400);
+		border-bottom-color: var(--sterror-400);
 	}
 	&.error.underline textarea{
 		border-color: transparent;
-		border-bottom-color: var(--stnegative-400);
+		border-bottom-color: var(--sterror-400);
 	}
 }
 
@@ -3480,14 +3433,14 @@ button{
 	/* error */
 
 	&.error input{
-		border-color: var(--stnegative-400);
-		color: var(--stnegative-600);
+		border-color: var(--sterror-400);
+		color: var(--sterror-600);
 		font-weight: 500;
 	}
 
 	&.error.underline input{
 		border-color: transparent;
-		border-bottom-color: var(--stnegative-400);
+		border-bottom-color: var(--sterror-400);
 	}
 
 	/* Sizes */
@@ -3576,13 +3529,13 @@ button{
 /* error */
 
 .stnotice.error{
-	background: var(--stnegative-500);
+	background: var(--sterror-500);
 	color: var(--stwhite);
 }
 
 .stnotice.error .title{
 	background: var(--stwhite);
-	color: var(--stnegative-600);
+	color: var(--sterror-600);
 }
 
 /* Outlined */
@@ -3599,7 +3552,7 @@ button{
 }
 
 .stnotice.outline.error .title{
-	background: var(--stnegative-500);
+	background: var(--sterror-500);
 	color: var(--stgray-50);
 }
 
@@ -3741,7 +3694,7 @@ button{
 /* error */
 
 .stcheckbox.error input{
-	border-color: var(--stnegative-600);
+	border-color: var(--sterror-600);
 	border-width: 2px;
 }
 
@@ -3888,7 +3841,7 @@ button{
 	/* error */
 
 	&.error input{
-		border-color: var(--stnegative-600);
+		border-color: var(--sterror-600);
 		border-width: 2px;
 	}
 
@@ -4124,14 +4077,14 @@ button{
 	/* error */
 
 	&.error{
-		background: var(--stnegative-500);
+		background: var(--sterror-500);
 		color: var(--stwhite);
 	}
 
 	&.error.outline{
 		background: transparent;
-		border-color: var(--stnegative-500);
-		color: var(--stnegative-700);
+		border-color: var(--sterror-500);
+		color: var(--sterror-700);
 	}
 
 	/* Sizes */
@@ -4527,17 +4480,17 @@ button{
 	/* error */
 
 	&.error{
-		border-color: var(--stnegative-400);
+		border-color: var(--sterror-400);
 	}
 
 	&.error select{
-		color: var(--stnegative-600);
+		color: var(--sterror-600);
 		font-weight: 500;
 	}
 
 	&.error.underline{
 		border-color: transparent;
-		border-bottom-color: var(--stnegative-400);
+		border-bottom-color: var(--sterror-400);
 	}
 
 	/* Sizes */
@@ -4808,7 +4761,7 @@ button{
 
 .mark{
 	border-radius: 0;
-	background: var(--stwarning-500);
+	background: var(--stwarn-500);
 	padding: 0 0.25rem;
 	color: var(--stblack);
 	font-size: var(--stfont-size-14px);
@@ -4914,19 +4867,19 @@ button{
 .rightrequire::after{
 	content: " *";
 	font-weight: bold;
-	color: var(--stnegative-600);
+	color: var(--sterror-600);
 }
 
 .leftrequire::before{
 	content: " *";
 	font-weight: bold;
-	color: var(--stnegative-600);
+	color: var(--sterror-600);
 }
 
 .require::after{
 	content: " *";
 	font-weight: bold;
-	color: var(--stnegative-600);
+	color: var(--sterror-600);
 }
 
 
@@ -4970,11 +4923,11 @@ button{
 /* error */
 
 .sttext.error{
-	color: var(--stnegative-600);
+	color: var(--sterror-600);
 }
 
 .sttext.error.secondary{
-	color: var(--stnegative-500);
+	color: var(--sterror-500);
 }
 
 /* ========================================================================== Variables ========================================================================== */
@@ -4985,6 +4938,7 @@ button{
 
 	/* ========================================================================== Base ========================================================================== */
 	color: var(--accent-color,inherit);
+	font-size: var(--stfont-size-20px);
 
 	/* ========================================================================== Variations ========================================================================== */
 
@@ -5118,7 +5072,7 @@ button{
 	/* Mark */
 	&.mark{
 		border-radius: 0;
-		background: var(--stwarning-500);
+		background: var(--stwarn-500);
 		padding: 0 0.25rem;
 		color: var(--stblack);
 		font-size: var(--stfont-size-14px);
@@ -5180,7 +5134,7 @@ button{
 	&.require::after{
 		content: " *";
 		font-weight: bold;
-		color: var(--stnegative-600);
+		color: var(--sterror-600);
 	}
 
 	/* Sizes */
@@ -5189,30 +5143,30 @@ button{
 	}
 
 	&.tiny{
-		font-size: var(--stfont-size-13px);
+		font-size: var(--stfont-size-12px);
 	}
 
 	&.small{
+		font-size: var(--stfont-size-13px);
+	}
+
+	&.little{
 		font-size: var(--stfont-size-15px);
 	}
 
 	&.normal{
-		font-size: var(--stfont-size-17px);
-	}
-
-	&.big{
 		font-size: var(--stfont-size-20px);
 	}
 
-	&.large{
-		font-size: var(--stfont-size-24px);
+	&.big{
+		font-size: var(--stfont-size-25px);
 	}
 
-	&.huge{
+	&.large{
 		font-size: var(--stfont-size-30px);
 	}
 
-	&.veryhuge{
+	&.huge{
 		font-size: var(--stfont-size-35px);
 	}
 
@@ -5223,11 +5177,11 @@ button{
 	/* error */
 
 	&.error{
-		color: var(--stnegative-600);
+		color: var(--sterror-600);
 	}
 
 	&.error.secondary{
-		color: var(--stnegative-500);
+		color: var(--sterror-500);
 	}
 }
 
@@ -5530,15 +5484,15 @@ button{
 	/* Emphasises */
 
 	&.error{
-		--stindicator-color: var(--stnegative-500) !important;
+		--stindicator-color: var(--sterror-500) !important;
 	}
 
 	&.success{
-		--stindicator-color: var(--stpositive-500) !important;
+		--stindicator-color: var(--stsuccess-500) !important;
 	}
 
 	&.warn{
-		--stindicator-color: var(--stwarning-500) !important;
+		--stindicator-color: var(--stwarn-500) !important;
 	}
 
 	/* Elevated */
@@ -5905,7 +5859,7 @@ label:has(.switch){
 	/* error */
 	&.error{
 		border-radius: 100rem;
-		border: 2px solid var(--stnegative-600);
+		border: 2px solid var(--sterror-600);
 	}
 
 	/* Sizes */
@@ -6339,15 +6293,15 @@ label:has(.switch){
 	}
 
 	&:is(tr,tr th,tr td).is-indicated.error{
-		box-shadow: 2px 0 0 var(--stnegative-600) inset;
+		box-shadow: 2px 0 0 var(--sterror-600) inset;
 	}
 
 	&:is(tr,tr th,tr td).is-indicated.is-positive{
-		box-shadow: 2px 0 0 var(--stpositive-600) inset;
+		box-shadow: 2px 0 0 var(--stsuccess-600) inset;
 	}
 
 	&:is(tr,tr th,tr td).is-indicated.warning{
-		box-shadow: 2px 0 0 var(--stwarning-600) inset;
+		box-shadow: 2px 0 0 var(--stwarn-600) inset;
 	}
 
 	/* Sticked */
@@ -6656,13 +6610,13 @@ label:has(.switch){
 /* error */
 
 .stprocedure .item.error .indicator{
-	background: var(--stnegative-500);
+	background: var(--sterror-500);
 	color: var(--stwhite);
-	border-color: var(--stnegative-500);
+	border-color: var(--sterror-500);
 }
 
 .stprocedure .item.error .label{
-	color: var(--stnegative-500);
+	color: var(--sterror-500);
 }
 
 /* Compact */
@@ -7577,15 +7531,17 @@ label:has(.switch){
 
 /* ========================================================================== Variables ========================================================================== */
 
-.stbreadcrumb{
+.breadcrumb{
 	--accent-color: initial;
 	--accent-foreground-color: initial;
 }
 
 /* ========================================================================== Base ========================================================================== */
 
-.stbreadcrumb{
+.breadcrumb{
 	display: flex;
+	align-items: center;
+	justify-content: center;
 	gap: 0.7rem;
 	color: var(--stgray-800);
 	line-height: 1;
@@ -7593,26 +7549,28 @@ label:has(.switch){
 
 /* ========================================================================== Structure ========================================================================== */
 
-.stbreadcrumb .item{
+.breadcrumb .link{
 	text-decoration: none;
 	color: var(--stgray-800);
 	padding-right: 1.1rem;
+	cursor: pointer;
+	user-select: none;
 }
 
-.stbreadcrumb .item:last-child{
+.breadcrumb .link:last-child{
 	padding-right: 0;
 }
 
-.stbreadcrumb .item .icon{
+.breadcrumb .link .icon{
 	display: inline-block;
 	text-decoration: none;
 }
 
-.stbreadcrumb a.item:hover{
+.breadcrumb a.link:hover{
 	text-decoration: underline;
 }
 
-.stbreadcrumb .item::after{
+.breadcrumb .link::after{
 	position: absolute;
 	user-select: none;
 	margin-left: 0.7rem;
@@ -7622,11 +7580,11 @@ label:has(.switch){
 	color: var(--stgray-500);
 }
 
-.stbreadcrumb .item:last-child::after{
+.breadcrumb .link:last-child::after{
 	display: none;
 }
 
-.stbreadcrumb .divider .icon{
+.breadcrumb .divider .icon{
 	font-size: 12px;
 	color: var(--stgray-500);
 }
@@ -7635,30 +7593,30 @@ label:has(.switch){
 
 /* Stepped */
 
-.stbreadcrumb.is-stepped .item{
+.breadcrumb.step .link{
 	color: var(--stgray-500);
 }
 
 /* Active */
 
-.stbreadcrumb .item.is-active{
+.breadcrumb .link.active{
 	color: var(--accent-color,var(--stgray-800));
-	font-weight: 500;
+	font-weight: bold;
 }
 
 /* Customized */
 
-.stbreadcrumb.is-customized .item::after{
+.breadcrumb.customize .link::after{
 	content: "";
 }
 
-.stbreadcrumb.is-customized .item{
+.breadcrumb.customize .link{
 	padding-right: 0;
 }
 
 /* Chevroned */
 
-.stbreadcrumb.is-chevroned .item::after{
+.breadcrumb.arrow .link::after{
 	content: "\f054";
 	font-size: var(--stfont-size-12px);
 	line-height: 1.4;
@@ -7666,11 +7624,11 @@ label:has(.switch){
 
 /* Hyphenated */
 
-.stbreadcrumb.is-hyphenated .item::after{
+.breadcrumb.hyphenate .link::after{
 	content: "-";
 }
 
-.stbreadcrumb:is(.is-chevroned,.is-hyphenated) .item::after{
+.breadcrumb:is(.arrow,.hyphenate) .link::after{
 	font-family: "Icons";
 	font-weight: normal;
 	font-style: normal;
@@ -7681,12 +7639,12 @@ label:has(.switch){
 
 /* Sizes */
 
-.stbreadcrumb.small{
-	font-size: var(--stfont-size-14px);
+.breadcrumb.small{
+	font-size: var(--stfont-size-15px);
 }
 
-.stbreadcrumb.large{
-	font-size: var(--stfont-size-17px);
+.breadcrumb.big{
+	font-size: var(--stfont-size-20px);
 }
 
 /* ========================================================================== Variables ========================================================================== */
@@ -8141,7 +8099,7 @@ label:has(.switch){
 /* error */
 
 .stsnackbar .action.error{
-	color: var(--stnegative-500);
+	color: var(--sterror-500);
 }
 
 /* ========================================================================== Variables ========================================================================== */
@@ -8514,7 +8472,7 @@ a.stheader:hover{
 /* error */
 
 .stheader.error{
-	color: var(--stnegative-600);
+	color: var(--sterror-600);
 }
 
 /* Heavy */
@@ -8624,7 +8582,6 @@ a.stheader:hover{
 /* ========================================================================== Base ========================================================================== */
 
 .main{
-	display: block;
 	text-decoration: none;
 	color: inherit;
 	border: 1px solid var(--stgray-300);
@@ -8632,7 +8589,7 @@ a.stheader:hover{
 	overflow: hidden;
 	padding: 1rem;
 	box-sizing: border-box;
-	background: var(--stgray-100);
+	background: var(--stgray-75);
 }
 
 a.main:hover{
@@ -8680,15 +8637,15 @@ a.main:hover{
 /* Emphasises */
 
 .main[class*="-indicated"].error{
-	--stindicator-color: var(--stnegative-500);
+	--stindicator-color: var(--sterror-500);
 }
 
 .main[class*="-indicated"].is-positive{
-	--stindicator-color: var(--stpositive-500);
+	--stindicator-color: var(--stsuccess-500);
 }
 
 .main[class*="-indicated"].warning{
-	--stindicator-color: var(--stwarning-500);
+	--stindicator-color: var(--stwarn-500);
 }
 
 /* Elevated */
@@ -9706,7 +9663,7 @@ a.main:hover{
 /* Quote */
 
 .stconversation .bubble .quote{
-	--brand-color: var(--stpositive-600);
+	--brand-color: var(--stsuccess-600);
 	border-left: 2px solid var(--brand-color);
 	margin: 0.5rem 0;
 	padding-left: 0.8rem;
@@ -9792,7 +9749,7 @@ a.main:hover{
 
 .stconversation.error .bubble .meta::after{
 	content: "\f071";
-	color: var(--stnegative-400);
+	color: var(--sterror-400);
 }
 
 /* Self */
@@ -10373,7 +10330,7 @@ html[data-scheme="light"],.light,html[data-scheme="dark"] .is-inverted{
 	--stgray-100: var(--stlight-gray-100);
 	--stgray-200: var(--stlight-gray-200);
 	--stgray-300: var(--stlight-gray-300);
-    
+
 	--stgray-500: var(--stlight-gray-500);
 	--stgray-600: var(--stlight-gray-600);
 	--stgray-700: var(--stlight-gray-700);
@@ -11291,13 +11248,13 @@ html[data-background="secondary"],html[data-background="secondary"] body{
 /* error */
 
 .sttimeline>.item.error .indicator .icon{
-	background: var(--stnegative-500);
+	background: var(--sterror-500);
 	color: var(--stwhite);
 }
 
 .sttimeline>.item.error.secondary .indicator .icon{
 	background: initial;
-	color: var(--stnegative-500);
+	color: var(--sterror-500);
 }
 
 /* Active */
@@ -13707,15 +13664,15 @@ html[data-background="secondary"],html[data-background="secondary"] body{
 }
 
 .textfail{
-	color: var(--stnegative-500);
+	color: var(--sterror-500);
 }
 
 .textsuccess{
-	color: var(--stpositive-500);
+	color: var(--stsuccess-500);
 }
 
 .textwarn{
-	color: var(--stwarning-500);
+	color: var(--stwarn-500);
 }
 
 .flexcenter{
@@ -13747,6 +13704,11 @@ html[data-background="secondary"],html[data-background="secondary"] body{
 	border: 1px white solid;
 }
 
+.flex{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 /* END */
 
 

@@ -9,7 +9,7 @@ docgetid("submit").onclick=function(){
         let data=JSON.parse(this.responseText)
         if(data["success"]){
             alert("新增成功")
-            localStorage.setItem("chrisjudgetoken",data["data"]["token"])
+            weblsset(WEBLSNAME+"token",data["data"]["token"])
             location.href="user.html"
         }else{
             alert(data["data"])

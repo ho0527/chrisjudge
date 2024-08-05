@@ -1,9 +1,9 @@
 oldajax("GET",AJAXURL+"logincheck",null,[
-    ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+    ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){
-        let file=location.href.split("chrisjudge/")[1]
+        let file=getfile()
         if(data["data"]==""){
             if(file!="index.html"&&file!="signup.html"){
                 location.href="index.html"

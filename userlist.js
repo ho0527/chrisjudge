@@ -19,7 +19,7 @@ docgetid("log").onclick=function(){
 }
 
 oldajax("GET",AJAXURL+"getuserlist",null,[
-    ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+    ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){
@@ -46,7 +46,7 @@ oldajax("GET",AJAXURL+"getuserlist",null,[
                 event.onclick=function(){
                     if(confirm("確認是否刪除?")){
                         // oldajax("DELETE",AJAXURL+"delquestion/"+event.dataset.id,null,[
-                        //     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+                        //     ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
                         // ]).onload=function(){
                         //     let data=JSON.parse(this.responseText)
                         //     if(data["success"]){
@@ -63,7 +63,7 @@ oldajax("GET",AJAXURL+"getuserlist",null,[
                 event.onclick=function(){
                     if(confirm("確認是否刪除?")){
                         // oldajax("DELETE",AJAXURL+"delquestion/"+event.dataset.id,null,[
-                        //     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+                        //     ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
                         // ]).onload=function(){
                         //     let data=JSON.parse(this.responseText)
                         //     if(data["success"]){
@@ -80,7 +80,7 @@ oldajax("GET",AJAXURL+"getuserlist",null,[
                 event.onclick=function(){
                     if(confirm("確認是否刪除?")){
                         // oldajax("DELETE",AJAXURL+"delquestion/"+event.dataset.id,null,[
-                        //     ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+                        //     ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
                         // ]).onload=function(){
                         //     let data=JSON.parse(this.responseText)
                         //     if(data["success"]){

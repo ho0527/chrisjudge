@@ -84,7 +84,7 @@ function main(){
 							},formdata([
 								["file",event.target.files[0]]
 							]),[
-								["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+								["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 							])
 						})
 					}
@@ -92,13 +92,13 @@ function main(){
 					alert(data["data"])
 				}
 			},null,[
-				["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+				["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 			])
 		}else{
 			alert(data["data"])
 		}
 	},null,[
-		["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+		["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 	])
 }
 

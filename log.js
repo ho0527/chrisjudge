@@ -1,4 +1,4 @@
-if(!isset(weblsget("chrisjudgetoken"))){
+if(!isset(weblsget(WEBLSNAME+"token"))){
     location.href="/chrisjudge/"
 }
 
@@ -23,7 +23,7 @@ docgetid("score").onclick=function(){
 }
 
 oldajax("GET",AJAXURL+"getlog",null,[
-    ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+    ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
 ]).onload=function(){
     let data=JSON.parse(this.responseText)
     if(data["success"]){

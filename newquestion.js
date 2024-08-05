@@ -64,7 +64,7 @@ docgetid("submit").onclick=function(){
         "maxruntime": docgetid("maxruntime").value
     }),[
         ["Content-Type","application/json"],
-        ["Authorization","Bearer "+weblsget("chrisjudgetoken")]
+        ["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
     ]).onload=function(){
         let data=JSON.parse(this.responseText)
         if(data["success"]){
