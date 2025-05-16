@@ -25,18 +25,18 @@ oldajax("GET",AJAXURL+"getquestionlist",null,[
     if(data["success"]){
         row=data["data"]
         for(let i=0;i<row.length;i=i+1){
-            let description=row[i][3]
+            let description=row[i]["description"]
             if(description.length>50){
                 description=description.slice(0,50)+"..."
             }
             docgetid("maintable").innerHTML=`
                 ${docgetid("maintable").innerHTML}
                 <tr>
-                    <td class="textleft">${row[i][2]}</td>
+                    <td class="textleft">${row[i]["title"]}</td>
                     <td class="textleft">${description}</td>
                     <td>
-                        <input type="button" class="button outline questionbutton" data-id="${row[i][0]}" value="查看">
-                        <input type="button" class="button error questiondelbutton" data-id="${row[i][0]}" value="刪除">
+                        <input type="button" class="button outline questionbutton" data-id="${row[i]["id"]}" value="查看">
+                        <input type="button" class="button error questiondelbutton" data-id="${row[i]["id"]}" value="刪除">
                     </td>
                 </tr>
             `

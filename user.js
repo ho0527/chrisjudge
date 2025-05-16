@@ -1,4 +1,5 @@
 let questionid
+let uploaded=false
 
 function main(){
 	ajax("GET",AJAXURL+"getresponse",function(event,data){
@@ -6,7 +7,7 @@ function main(){
 			let responserow=data["data"]
 			let responselist=[]
 			for(let i=0;i<responserow.length;i=i+1){
-				responselist[parseInt(responserow[i][2])]=responserow[i]
+				responselist[parseInt(responserow[i]["questionid"])]=responserow[i]
 			}
 			ajax("GET",AJAXURL+"getquestionlist",function(event,questiondata){
 				if(questiondata["success"]){
@@ -22,8 +23,8 @@ function main(){
 					` // 表格初始化
 
 					for(let i=0;i<row.length;i=i+1){
-						let description=row[i][3]
-						let result=responselist[row[i][0]]
+						let description=row[i]["description"]
+						let result=responselist[row[i]["id"]]
 						let resultcolor=""
 
 						if(description.length>50){
@@ -31,7 +32,7 @@ function main(){
 						}
 
 						if(isset(result)){
-							result=responselist[row[i][0]][6]
+							result=responselist[row[i]["id"]]["result"]
 						}else{
 							result=""
 						}
@@ -50,11 +51,11 @@ function main(){
 							${domgetid("maintable").innerHTML}
 							<tr>
 								<td class="usertableresult" style="color: ${resultcolor}">${result}</td>
-								<td class="textleft">${row[i][2]}</td>
+								<td class="textleft">${row[i]["title"]}</td>
 								<td class="textleft">${description}</td>
 								<td>
-									<input type="button" class="button outline questionbutton" data-id="${row[i][0]}" value="查看">
-									<input type="button" class="button light ansbutton" data-id="${row[i][0]}" value="上傳檔案">
+									<input type="button" class="button outline questionbutton" data-id="${row[i]["id"]}" value="查看">
+									<input type="button" class="button light ansbutton" data-id="${row[i]["id"]}" value="上傳檔案">
 								</td>
 							</tr>
 						`
@@ -72,20 +73,23 @@ function main(){
 						})
 
 						onchange("#file",function(elemnet,event){
-							removeclass("#process",["display-none"])
+							if(!uploaded){
+								uploaded=true
+								removeclass("#process",["display-none"])
 
-							ajax("POST",AJAXURL+"newresponse/"+questionid,function(event,data){
-								if(data["success"]){
-									alert("結果: "+data["data"])
-									href("")
-								}else{
-									alert(data["data"])
-								}
-							},formdata([
-								["file",event.target.files[0]]
-							]),[
-								["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
-							])
+								ajax("POST",AJAXURL+"newresponse/"+questionid,function(event,data){
+									if(data["success"]){
+										alert("結果: "+data["data"])
+										href("")
+									}else{
+										alert(data["data"])
+									}
+								},formdata([
+									["file",event.target.files[0]]
+								]),[
+									["Authorization","Bearer "+weblsget(WEBLSNAME+"token")]
+								])
+							}
 						})
 					}
 				}else{
